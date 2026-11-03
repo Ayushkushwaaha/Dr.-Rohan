@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Rohan | Senior Consultant Interventional Radiologist in Varanasi. Advanced pinhole treatments for Varicose Veins, Uterine Fibroids, Enlarged Prostate (PAE), Knee Arthritis (GAE), Thyroid, and Cancer care.">
+  <title>Dr. Rohan | Interventional Radiology Clinic | Varanasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP EMERGENCY & HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-left">
+        <span>📍 <strong>Sigra, Varanasi</strong> (Convenient to Cantt & Lanka)</span>
+        <a href="tel:18002021801">📞 OPD Helpline: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-right">
+        <span class="topline-badge">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Trauma & Acute Bleed Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <!-- Desktop Navlinks -->
+      <nav class="navlinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation ↗</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker"><span class="pulse-dot"></span>OPD Active in Varanasi • Sigra Center</span>
+          <h1>Told You Need Surgery?<br><em>There May Be a Pinhole Alternative.</em></h1>
+          <p class="hero-copy">
+            Over the past decade, image-guided endovascular medicine has transformed surgery. Using advanced ultrasound and Cath Lab fluoroscopy, Dr. Rohan treats Varicose Veins, Uterine Fibroids, Enlarged Prostate, and Knee Pain through a tiny 2mm skin puncture. No large cuts, no stitches, and you walk home the same afternoon.
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
+            <a class="btn secondary" href="treatments.html">Explore Pinhole Procedures</a>
+          </div>
+
+          <div class="hero-trust-bar">
+            <div class="rating-pill">
+              <span class="stars">★★★★★</span>
+              <span><strong>4.9 / 5.0</strong> (180+ Google Reviews)</span>
+            </div>
+            <div class="hero-meta-item">
+              <span>💳</span>
+              <span><strong>Cashless Mediclaim</strong> Across All Major TPAs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-hero-frame">
+          <img class="doctor-portrait" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Dr. Rohan, Consultant Interventional Radiologist in Varanasi" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80'">
+          <div class="doctor-card-meta">
+            <strong>Dr. Rohan, MD, FVIR</strong>
+            <small>VASCULAR & INTERVENTIONAL RADIOLOGIST</small>
+            <p>Fellowship-Trained Specialist in Endovascular Laser, UFE, Prostate PAE & Interventional Oncology.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCREDITATIONS & CLINICAL STANDARDS BAR (REPLACES AI MARQUEE) -->
+    <section class="accreditation-bar">
+      <div class="container accreditation-grid">
+        <div class="accreditation-item">
+          <span class="accreditation-icon">🏥</span>
+          <div>
+            <strong>Advanced Cath Lab & DSA</strong>
+            <span>Sub-millimeter catheter navigation</span>
+          </div>
+        </div>
+        <div class="accreditation-item">
+          <span class="accreditation-icon">🛡️</span>
+          <div>
+            <strong>100% Organ Preservation</strong>
+            <span>Uterus-saving & non-surgical BPH</span>
+          </div>
+        </div>
+        <div class="accreditation-item">
+          <span class="accreditation-icon">🚶</span>
+          <div>
+            <strong>Walk-In Walk-Out Daycare</strong>
+            <span>Discharge in 4 to 6 hours</span>
+          </div>
+        </div>
+        <div class="accreditation-item">
+          <span class="accreditation-icon">💳</span>
+          <div>
+            <strong>TPA Cashless Support</strong>
+            <span>Pre-auth desk for all insurance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTOR'S PERSONAL LETTER (HUMAN WARMTH) -->
+    <section class="section doctor-letter-section" id="about">
+      <div class="container">
+        <div class="doctor-letter-box">
+          <div class="doctor-letter-content">
+            <span class="kicker">A Personal Welcome</span>
+            <h3>"My commitment is simple: surgery only when truly unavoidable."</h3>
+            <p>
+              Over years of clinical practice in vascular and interventional radiology, I have met hundreds of patients who endured months of debilitating pain simply because they were terrified of open surgery, surgical scars, or general anesthesia.
+            </p>
+            <p>
+              Today, medical science has fundamentally shifted. With high-precision ultrasound and Cath Lab catheter guidance, we can seal painful varicose veins in 35 minutes, shrink symptomatic uterine fibroids without touching the uterus, and relieve enlarged prostate blockage without urethral cutting.
+            </p>
+            <p>
+              Whether you are visiting our Varanasi clinic from within the city or traveling from Mirzapur, Jaunpur, Ghazipur, or Bihar, my promise to you is an unhurried consultation, honest evaluation of your scans, and treatment planned with your long-term comfort in mind.
+            </p>
+            <div class="doctor-signature">
+              <div class="logo-emblem" style="width:38px;height:38px;font-size:18px;">R</div>
+              <div class="doctor-signature-text">
+                <strong>Dr. Rohan, MD, FVIR</strong>
+                <span>Consultant Interventional Radiologist • Varanasi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="doctor-letter-sidebar">
+            <div class="sidebar-stat">
+              <b>1,200+</b>
+              <span>Pinhole vascular & organ interventions performed</span>
+            </div>
+            <div class="sidebar-stat">
+              <b>98.4%</b>
+              <span>Clinical success & patient satisfaction rate</span>
+            </div>
+            <div class="sidebar-stat">
+              <b>Zero</b>
+              <span>Large surgical incisions or stitches required</span>
+            </div>
+            <div class="sidebar-stat">
+              <b>Same Day</b>
+              <span>Average recovery & hospital discharge time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON: PINHOLE IR VS TRADITIONAL SURGERY -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Understanding Your Choices</span>
+          <h2>How Pinhole Interventions Compare to Open Surgery</h2>
+          <p>A transparent breakdown of why image-guided treatments are replacing conventional surgical procedures worldwide.</p>
+        </div>
+
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Treatment Parameter</th>
+                <th class="highlight">Interventional Radiology (Dr. Rohan's Clinic)</th>
+                <th>Traditional Open Surgery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Incision & Scarring</strong></td>
+                <td class="highlight">2 mm pinhole puncture; zero surgical cuts or stitches</td>
+                <td>5 to 15 cm open cut; staples or stitches required</td>
+              </tr>
+              <tr>
+                <td><strong>Anesthesia Used</strong></td>
+                <td class="highlight">Gentle local numbing with mild sedation (conscious comfort)</td>
+                <td>General anesthesia with breathing tube and paralysis</td>
+              </tr>
+              <tr>
+                <td><strong>Hospital Stay</strong></td>
+                <td class="highlight">Daycare procedure; walk home in 4 to 6 hours</td>
+                <td>3 to 7 days hospital stay in an inpatient ward</td>
+              </tr>
+              <tr>
+                <td><strong>Organ Preservation</strong></td>
+                <td class="highlight">Complete organ preserved (e.g. saves uterus, avoids prostate resection)</td>
+                <td>Often involves partial or total organ removal (Hysterectomy, TURP)</td>
+              </tr>
+              <tr>
+                <td><strong>Recovery & Work</strong></td>
+                <td class="highlight">Desk work in 24 hours; normal routine in 2–3 days</td>
+                <td>3 to 6 weeks of bed rest, wound care, and activity limits</td>
+              </tr>
+              <tr>
+                <td><strong>Blood Loss & Infection</strong></td>
+                <td class="highlight">Negligible blood loss (&lt; 10 ml); minimal wound infection risk</td>
+                <td>Significant bleeding risk; higher rate of wound infection</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINICAL CATEGORIES & SPECIALTIES (MATCHING IR CLINIC INDIA ARCHITECTURE) -->
+    <section class="section sand" id="categories">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Clinical Architecture • IR Clinic India Standards</span>
+          <h2>Explore by Clinical Specialty</h2>
+          <p>Interventional Radiology provides pinhole alternatives across 9 comprehensive clinical disciplines. Select a category below to explore specific procedures.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="category-filter-bar">
+          <button class="category-filter-tab active" onclick="filterCategory('all', this)">
+            All Categories <span class="tab-count">9</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('vascular', this)">
+            Peripheral Vascular <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('obgyn', this)">
+            Women's Health (OB/GYN) <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('urology', this)">
+            Urological (PAE) <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('msk', this)">
+            Musculoskeletal (GAE) <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('gi', this)">
+            GI & Liver Oncology <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('headneck', this)">
+            Head & Neck (Thyroid) <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('thoracic', this)">
+            Thoracic & Lungs <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('neuro', this)">
+            Neuro <span class="tab-count">4</span>
+          </button>
+        </div>
+
+        <div class="category-cards-grid">
+          <!-- 1. Peripheral Vascular -->
+          <article class="category-specialty-card" data-cat="vascular">
+            <div class="category-card-header">
+              <div class="category-card-icon">🩸</div>
+              <div>
+                <small>SPECIALTY 01</small>
+                <h3>Peripheral Vascular</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Advanced laser and catheter solutions for leg veins, ulcers, deep vein clots, and diabetic foot artery blockages.</p>
+            <ul class="category-procedures-list">
+              <li>Varicose Veins EVLA & VenaSeal Glue</li>
+              <li>Deep Vein Thrombosis (DVT) Thrombolysis</li>
+              <li>Diabetic Foot & PAD Angioplasty / Stenting</li>
+              <li>AVMs & Vascular Malformation Sclerotherapy</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#varicose">Explore Vascular Care →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Peripheral Vascular')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 2. Obstetrics & Gynecology -->
+          <article class="category-specialty-card" data-cat="obgyn">
+            <div class="category-card-header">
+              <div class="category-card-icon">🌸</div>
+              <div>
+                <small>SPECIALTY 02</small>
+                <h3>Obstetrics & Gynecology</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Organ-preserving, uterus-saving pinhole therapies for fibroids, severe pelvic cramps, and chronic pelvic congestion.</p>
+            <ul class="category-procedures-list">
+              <li>Uterine Fibroid Embolization (UFE / UAE)</li>
+              <li>Adenomyosis Arterial Embolization</li>
+              <li>Pelvic Congestion Syndrome Coiling</li>
+              <li>Post-Partum Hemorrhage (PPH Emergency Bleed Control)</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#fibroids">Explore Women's Health →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Uterine Fibroids (UFE)')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 3. Urological -->
+          <article class="category-specialty-card" data-cat="urology">
+            <div class="category-card-header">
+              <div class="category-card-icon">💧</div>
+              <div>
+                <small>SPECIALTY 03</small>
+                <h3>Urological Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Endovascular pinhole relief for enlarged prostate and male subfertility without surgery through the penis.</p>
+            <ul class="category-procedures-list">
+              <li>Prostate Artery Embolization (PAE for BPH)</li>
+              <li>Varicocele Embolization (Fertility & Pain Relief)</li>
+              <li>Renal Angiomyolipoma (AML) Embolization</li>
+              <li>PCN & Antegrade Ureteric Stenting</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#prostate">Explore Urology IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Prostate PAE / Urology')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 4. Musculoskeletal -->
+          <article class="category-specialty-card" data-cat="msk">
+            <div class="category-card-header">
+              <div class="category-card-icon">🦴</div>
+              <div>
+                <small>SPECIALTY 04</small>
+                <h3>Musculoskeletal & Joints</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Non-surgical embolization targeting abnormal hypervascularity and chronic inflammatory pain nerves in arthritic joints.</p>
+            <ul class="category-procedures-list">
+              <li>Genicular Artery Embolization (GAE for Knee Pain)</li>
+              <li>Frozen Shoulder (Adhesive Capsulitis) Embolization</li>
+              <li>Vertebroplasty / Kyphoplasty for Spine Fractures</li>
+              <li>Osteoid Osteoma Radiofrequency Ablation</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#knee">Explore Joint Pain IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Knee Pain (GAE)')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 5. Gastrointestinal & Hepatobiliary -->
+          <article class="category-specialty-card" data-cat="gi">
+            <div class="category-card-header">
+              <div class="category-card-icon">🌿</div>
+              <div>
+                <small>SPECIALTY 05</small>
+                <h3>Gastrointestinal & Liver</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Targeted local oncology for liver tumors and life-saving catheter embolization for acute internal bleeding.</p>
+            <ul class="category-procedures-list">
+              <li>TACE & TARE (Y-90) for Liver Tumors</li>
+              <li>Microwave & RFA Liver Tumor Ablation</li>
+              <li>Acute GI Bleed Embolization (Ulcers/Diverticula)</li>
+              <li>PTBD Biliary Stenting & Drainage</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#oncology">Explore GI & Liver IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Liver TACE / GI')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 6. Head & Neck -->
+          <article class="category-specialty-card" data-cat="headneck">
+            <div class="category-card-header">
+              <div class="category-card-icon">👤</div>
+              <div>
+                <small>SPECIALTY 06</small>
+                <h3>Head & Neck</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Thermal needle ablation and endovascular embolization for thyroid nodules and severe epistaxis without neck scars.</p>
+            <ul class="category-procedures-list">
+              <li>Thyroid Nodule Radiofrequency Ablation (RFA)</li>
+              <li>Carotid Artery Stenting (CAS for Stroke Prevention)</li>
+              <li>Severe Epistaxis (Nosebleed) Embolization</li>
+              <li>Head & Neck Vascular Malformations</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#thyroid">Explore Head & Neck →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Thyroid RFA')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 7. Thoracic & Pulmonary -->
+          <article class="category-specialty-card" data-cat="thoracic">
+            <div class="category-card-header">
+              <div class="category-card-icon">🫁</div>
+              <div>
+                <small>SPECIALTY 07</small>
+                <h3>Thoracic (Chest & Lungs)</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Procedures for coughing blood, thoracic fluid collections, and safe long-term chemotherapy vascular access lines.</p>
+            <ul class="category-procedures-list">
+              <li>Bronchial Artery Embolization (Hemoptysis)</li>
+              <li>Chemoport Insertion for Chemotherapy</li>
+              <li>PICC Line Placement (Ultrasound-Guided)</li>
+              <li>CT-Guided Precision Lung Biopsy</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#dialysis">Explore Thoracic IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Thoracic & Chemoport')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 8. Neuro Interventions -->
+          <article class="category-specialty-card" data-cat="neuro">
+            <div class="category-card-header">
+              <div class="category-card-icon">🧠</div>
+              <div>
+                <small>SPECIALTY 08</small>
+                <h3>Neuro Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Endovascular microcatheter treatments for brain aneurysms, acute ischemic stroke clots, and complex intracranial vessels.</p>
+            <ul class="category-procedures-list">
+              <li>Emergency Mechanical Thrombectomy for Acute Stroke</li>
+              <li>Brain Aneurysm Coiling & Flow Diverter Stenting</li>
+              <li>Brain AVM (Arteriovenous Malformation) Coiling</li>
+              <li>Diagnostic Cerebral DSA Angiography</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="categories.html">Explore Neuro Care →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Neuro Intervention')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 9. Basic & Daycare Interventions -->
+          <article class="category-specialty-card" data-cat="basic">
+            <div class="category-card-header">
+              <div class="category-card-icon">🔬</div>
+              <div>
+                <small>SPECIALTY 09</small>
+                <h3>Basic & Daycare Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">Outpatient diagnostic biopsies and therapeutic drainage procedures performed under ultrasound or CT in 20–30 minutes.</p>
+            <ul class="category-procedures-list">
+              <li>USG & CT-Guided Core Biopsy (Liver, Lung, Kidney)</li>
+              <li>Fine Needle Aspiration Cytology (FNAC)</li>
+              <li>Pigtail Catheter Insertion for Abscess Drainage</li>
+              <li>AV Fistula Salvage Balloon Angioplasty</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="categories.html">Explore Daycare IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Daycare Biopsy / Drainage')">Consult ↗</button>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:36px;">
+          <a class="btn" href="categories.html">View Detailed Clinical Categories Guide →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE CLINICAL PROCEDURES -->
+    <section class="section soft" id="treatments">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Clinical Specialties</span>
+          <h2>Pinhole Procedures Available at Varanasi</h2>
+          <p>Minimally invasive, image-guided therapies performed in our sterile procedure suite and Cath Lab.</p>
+        </div>
+
+        <div class="treatments-grid">
+          <!-- 1. Varicose Veins -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Vascular Care</span>
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Varicose Vein Treatment" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">01 / VEIN HEALTH</span>
+              <h3>Varicose Veins (EVLA & VenaSeal Glue)</h3>
+              <p>Non-surgical laser and medical adhesive treatment for heavy, aching, swollen leg veins and non-healing venous ulcers. Walk into clinic, walk out 45 minutes later.</p>
+              <div class="treatment-perks">
+                <span>Zero cuts, stitches, or ugly leg scars</span>
+                <span>Performed under comfortable local numbing</span>
+                <span>Immediate return to walking and normal routine</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#varicose">View Vein Protocol →</a>
+            </div>
+          </article>
+
+          <!-- 2. Uterine Fibroids (UFE) -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Women's Health</span>
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80" alt="Uterine Fibroid Embolization" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">02 / GYNECOLOGY</span>
+              <h3>Uterine Fibroid Embolization (UFE)</h3>
+              <p>A proven, uterus-saving alternative to hysterectomy. Micro-particles block the blood vessels feeding fibroids, causing them to shrink and stopping heavy bleeding permanently.</p>
+              <div class="treatment-perks">
+                <span>Preserves your natural uterus and fertility</span>
+                <span>Relieves severe cramps and heavy periods</span>
+                <span>Recovery in 3–4 days instead of 6 weeks</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#fibroids">View Fibroid Protocol →</a>
+            </div>
+          </article>
+
+          <!-- 3. Prostate (PAE) -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Men's Health</span>
+              <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=80" alt="Prostate Artery Embolization" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">03 / UROLOGY</span>
+              <h3>Prostate Artery Embolization (PAE for BPH)</h3>
+              <p>For men over 50 struggling with enlarged prostate (frequent night urination, weak stream, urgency). Catheter pinhole blocks prostate blood flow from wrist artery.</p>
+              <div class="treatment-perks">
+                <span>No surgery through the penis or urethra</span>
+                <span>Zero risk of erectile dysfunction or incontinence</span>
+                <span>No painful urinary catheter after procedure</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#prostate">View Prostate Protocol →</a>
+            </div>
+          </article>
+
+          <!-- 4. Knee Arthritis (GAE) -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Joint Pain</span>
+              <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" alt="Genicular Artery Embolization for Knee Arthritis" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">04 / MUSCULOSKELETAL</span>
+              <h3>Knee Arthritis Pain Embolization (GAE)</h3>
+              <p>Breakthrough non-surgical relief for chronic knee osteoarthritis. Shuts off the abnormal micro-vessels feeding chronic joint inflammation and pain nerves.</p>
+              <div class="treatment-perks">
+                <span>Postpones or avoids total knee replacement</span>
+                <span>Rapid pain relief & improved walking in 1–2 weeks</span>
+                <span>Performed under local numbing in 45 minutes</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#knee">View Knee Protocol →</a>
+            </div>
+          </article>
+
+          <!-- 5. Thyroid Nodule Ablation -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Endocrine Care</span>
+              <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=700&q=80" alt="Thyroid Nodule Ablation" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583912267550-d6c2b7d6c3e8?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">05 / HEAD & NECK</span>
+              <h3>Thyroid Nodule Radiofrequency Ablation</h3>
+              <p>Precision thermal ablation of benign thyroid nodules through a needle puncture under ultrasound guidance. Shrinks neck lumps without surgery or neck scars.</p>
+              <div class="treatment-perks">
+                <span>Zero visible neck scar</span>
+                <span>Preserves natural thyroid hormone function</span>
+                <span>No need for lifelong daily thyroid pills</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#thyroid">View Thyroid Protocol →</a>
+            </div>
+          </article>
+
+          <!-- 6. Oncology & Dialysis Access -->
+          <article class="treatment-card">
+            <div class="treatment-img-wrap">
+              <span class="treatment-pill">Oncology & Vascular</span>
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80" alt="Interventional Oncology and Chemoport" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80'">
+            </div>
+            <div class="treatment-body">
+              <span class="kicker" style="margin-bottom:4px;">06 / CANCER & DIALYSIS</span>
+              <h3>TACE, Chemoports & Dialysis Access</h3>
+              <p>Targeted chemoembolization (TACE) and tumor ablation for liver lesions, plus precision placement of Chemoports, PICC lines, and Permacath hemodialysis lines.</p>
+              <div class="treatment-perks">
+                <span>Concentrated tumor targeting with less chemo toxicity</span>
+                <span>Pain-free, reliable vascular access for chemo</span>
+                <span>Ultrasound-guided zero-fail placement</span>
+              </div>
+              <a class="treatment-link" href="treatments.html#oncology">View Oncology & Access →</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+          <a class="btn" href="treatments.html">Explore All 20+ Interventional Procedures →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL PATIENT STORIES (AUTHENTIC HUMAN PROOF) -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Real Patient Outcomes</span>
+          <h2>Stories of Healing Without Big Surgery</h2>
+          <p>Real experiences from patients across Varanasi, Mirzapur, Ghazipur, and Bihar who chose pinhole care with Dr. Rohan.</p>
+        </div>
+
+        <div class="stories-grid">
+          <!-- Story 1 -->
+          <div class="story-card">
+            <div class="story-quote">
+              "I was told by two surgeons that my only option for uterine fibroids was removing my entire uterus (hysterectomy). I was only 43 and deeply worried. Dr. Rohan sat with me, explained the UFE procedure, and showed me my scan. Four months later, my heavy bleeding has stopped completely, my ultrasound shows 70% shrinkage, and my uterus is safe."
+            </div>
+            <div class="story-author">
+              <div>
+                <strong>Mrs. Sunita Devi, 44 yrs</strong>
+                <small>Uterine Fibroid Embolization (UFE) • Varanasi</small>
+              </div>
+              <span class="verified-tag">Verified Patient</span>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="story-card">
+            <div class="story-quote">
+              "For 4 years, I suffered from bulging, rope-like varicose veins and painful skin discoloration near my ankle. The pain at the end of a workday was unbearable. Dr. Rohan performed the laser procedure under local anesthesia in 40 minutes. I felt almost nothing and walked to my car the same evening. The ulcer has completely healed."
+            </div>
+            <div class="story-author">
+              <div>
+                <strong>Rajeshwar Singh, 58 yrs</strong>
+                <small>Laser Vein Ablation (EVLA) • Mirzapur</small>
+              </div>
+              <span class="verified-tag">Verified Patient</span>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="story-card">
+            <div class="story-quote">
+              "Waking up 5 to 6 times every night to urinate made my life miserable. I was terrified of prostate surgery because of rumors about urine leakage and loss of manhood. Prostate Artery Embolization through my wrist was like magic. Within 10 days my urine flow returned to normal and I finally sleep through the night."
+            </div>
+            <div class="story-author">
+              <div>
+                <strong>Awadhesh Mishra, 63 yrs</strong>
+                <small>Prostate Artery Embolization (PAE) • Ghazipur</small>
+              </div>
+              <span class="verified-tag">Verified Patient</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BODY EXPLORER -->
+    <section class="section soft" id="explorer">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Interactive Anatomical Guide</span>
+          <h2>Where Does It Hurt? Explore by Body Region</h2>
+          <p>Select any anatomical zone on the diagram or tap the buttons to discover targeted, pinhole solutions available at our clinic.</p>
+        </div>
+
+        <div class="body-explorer-grid">
+          <!-- Interactive Silhouette Vector -->
+          <div class="body-silhouette-container">
+            <svg class="body-svg" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="bodyBase" opacity="0.25" fill="#186862">
+                <circle cx="150" cy="55" r="32"/>
+                <rect x="142" y="87" width="16" height="25" rx="4"/>
+                <path d="M110 115 C110 110, 190 110, 190 115 L195 240 C195 245, 105 245, 105 240 Z"/>
+                <path d="M106 240 C106 240, 194 240, 194 240 L185 305 L115 305 Z"/>
+                <path d="M108 120 L75 220 L65 330 L80 335 L92 230 L115 140 Z"/>
+                <path d="M192 120 L225 220 L235 330 L220 335 L208 230 L185 140 Z"/>
+                <path d="M116 308 L110 440 L105 570 L132 570 L140 440 L146 308 Z"/>
+                <path d="M184 308 L190 440 L195 570 L168 570 L160 440 L154 308 Z"/>
+              </g>
+
+              <!-- Interactive Clickable Zones -->
+              <g class="body-zone-btn active" data-zone="head" onclick="selectBodyZone('head')">
+                <circle cx="150" cy="55" r="34" fill="#186862" opacity="0.6"/>
+                <rect x="139" y="86" width="22" height="26" rx="4" fill="#186862" opacity="0.6"/>
+                <text x="150" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">HEAD</text>
+              </g>
+
+              <g class="body-zone-btn" data-zone="chest" onclick="selectBodyZone('chest')">
+                <rect x="114" y="118" width="72" height="60" rx="8" fill="#186862" opacity="0.5"/>
+                <text x="150" y="152" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">CHEST</text>
+              </g>
+
+              <g class="body-zone-btn" data-zone="abdomen" onclick="selectBodyZone('abdomen')">
+                <rect x="112" y="184" width="76" height="52" rx="8" fill="#186862" opacity="0.5"/>
+                <text x="150" y="214" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">ABDOMEN</text>
+              </g>
+
+              <g class="body-zone-btn" data-zone="pelvis" onclick="selectBodyZone('pelvis')">
+                <rect x="110" y="242" width="80" height="58" rx="8" fill="#186862" opacity="0.5"/>
+                <text x="150" y="274" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">PELVIS</text>
+              </g>
+
+              <g class="body-zone-btn" data-zone="limbs" onclick="selectBodyZone('limbs')">
+                <rect x="98" y="315" width="104" height="240" rx="12" fill="#186862" opacity="0.35"/>
+                <text x="150" y="440" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">LEGS & JOINTS</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Controls & Detailed Info -->
+          <div class="body-controls">
+            <div class="body-pill-grid">
+              <button class="body-pill active" data-zone="head" onclick="selectBodyZone('head')">
+                01. Head & Neck <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="chest" onclick="selectBodyZone('chest')">
+                02. Chest & Lungs <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="abdomen" onclick="selectBodyZone('abdomen')">
+                03. Abdomen & Liver <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="pelvis" onclick="selectBodyZone('pelvis')">
+                04. Pelvis & Reproductive <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="limbs" onclick="selectBodyZone('limbs')" style="grid-column:span 2;">
+                05. Limbs, Veins & Knee Joint <span>→</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Detail Display Card -->
+            <div class="body-detail-card">
+              <h3 id="bodyZoneTitle">Head & Neck Interventions</h3>
+              <p id="bodyZoneDesc">Non-surgical image-guided procedures for thyroid nodules, vascular lesions, and cerebrovascular conditions without open surgery or neck scars.</p>
+              
+              <div style="font-size:11.5px;font-weight:700;color:var(--oxford);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">
+                Available Interventions:
+              </div>
+              <div class="condition-tags" id="bodyZoneTreatments">
+                <span class="condition-tag">Thyroid Nodule Ablation (RFA / Microwave)</span>
+                <span class="condition-tag">Carotid Artery Stenting (CAS)</span>
+                <span class="condition-tag">Brain Aneurysm Coiling & AVM</span>
+                <span class="condition-tag">Head & Neck Vascular Malformations</span>
+                <span class="condition-tag">Epistaxis (Nosebleed) Embolization</span>
+              </div>
+
+              <div style="margin-top:16px;padding:12px;background:#fff;border-radius:6px;border-left:3px solid var(--teal);font-size:12.5px;color:var(--ink);">
+                <strong>Clinical Takeaway:</strong> <span id="bodyZoneHighlight">Thyroid RFA shrinks benign nodules through a needle puncture—preserving normal thyroid function with zero visible neck scarring.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATIENT JOURNEY / CARE TIMELINE -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Step-By-Step Care</span>
+          <h2>What to Expect on Your Visit</h2>
+          <p>We believe in transparent clinical conversations, second-opinion scan reviews, and zero unexpected surprises.</p>
+        </div>
+
+        <div class="journey-grid">
+          <div class="journey-step">
+            <span class="step-number">STEP 01</span>
+            <h3>Detailed Scan Review</h3>
+            <p>Dr. Rohan reviews your ultrasound, CT, or MRI films directly with you in our Varanasi consultation room, explaining the root cause.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">STEP 02</span>
+            <h3>Is a Pinhole Option Right?</h3>
+            <p>We evaluate whether your case qualifies for daycare catheter treatment or if conservative medical therapy is safer for you.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">STEP 03</span>
+            <h3>30-60 Min Procedure</h3>
+            <p>Performed in our sterile Cath Lab under gentle local numbing. You remain awake and comfortable with zero physical cutting.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">STEP 04</span>
+            <h3>Same-Day Discharge</h3>
+            <p>Rest comfortably in our daycare suite for 3 to 5 hours, receive personal follow-up guidance, and head home the very same afternoon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATH LAB & ADVANCED TECHNOLOGY SUITE -->
+    <section class="section soft" id="cathlab">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker"><span class="pulse-dot"></span>Cath Lab Facility • Sigra, Varanasi</span>
+          <h2>Advanced Cath Lab Suite & Imaging Guidance</h2>
+          <p>
+            Equipped with state-of-the-art Digital Subtraction Angiography (DSA), ultra-low dose pulsed fluoroscopy, and real-time color Doppler ultrasound for sub-millimeter catheter navigation.
+          </p>
+        </div>
+
+        <div class="tech-showcase-grid">
+          <!-- 1. Cath Lab DSA -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Cath Lab Digital Subtraction Angiography" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="kicker" style="margin-bottom:4px;">VASCULAR CATH LAB</span>
+              <h3>Digital Subtraction Angiography (DSA)</h3>
+              <p>
+                DSA digitally "subtracts" bones and surrounding soft tissues from X-ray imaging, providing a crystal-clear, magnified roadmap of only blood vessels. This allows Dr. Rohan to steer microcatheters as thin as 1 mm into target vessels feeding fibroids, tumors, or the prostate with sub-millimeter precision.
+              </p>
+              <div class="solution-box">
+                <strong>Used In:</strong> Uterine Fibroids (UFE), Prostate (PAE), Knee Pain (GAE), Liver TACE, and Angioplasty.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. High-Resolution Ultrasound & Doppler -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="High Resolution Color Doppler Ultrasound" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="kicker" style="margin-bottom:4px;">REAL-TIME MAPPING</span>
+              <h3>High-Resolution Ultrasound & Color Doppler</h3>
+              <p>
+                Live zero-radiation ultrasound allows visualization of moving blood cells and vascular valves. Dr. Rohan performs every needle puncture with live visual tracking, eliminating "blind" attempts, minimizing tissue irritation, and ensuring 100% first-pass accuracy.
+              </p>
+              <div class="solution-box">
+                <strong>Used In:</strong> Varicose vein EVLA laser, Thyroid RFA ablation, Chemoport placement, and precision biopsies.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CT-Guided Stereotactic Navigation -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=800&q=80" alt="CT Guidance Scanner" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="kicker" style="margin-bottom:4px;">CROSS-SECTIONAL ACCURACY</span>
+              <h3>CT-Guided Stereotactic Navigation</h3>
+              <p>
+                Multi-detector CT scanning provides true 3D cross-sectional views of deep internal organs. Dr. Rohan can guide needle antennas directly into deep liver, lung, or spinal lesions while avoiding vital blood vessels and nerves by millimeters.
+              </p>
+              <div class="solution-box">
+                <strong>Used In:</strong> Deep tumor microwave ablation, lung nodule biopsies, and complex abdominal pigtail drainage.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Thermal & Microwave Ablation Generators -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Thermal Ablation Generator" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="kicker" style="margin-bottom:4px;">TUMOR & VEIN ABLATION</span>
+              <h3>Radiofrequency & Microwave Ablation Generators</h3>
+              <p>
+                Advanced generators deliver carefully calibrated electromagnetic thermal energy through hair-thin probe tips. Thermal energy coagulates diseased nodular tissue or diseased vein walls in minutes, with zero surgical incision or scarring.
+              </p>
+              <div class="solution-box">
+                <strong>Used In:</strong> Thyroid nodule shrinkage, liver cancer ablation, and varicose vein obliteration.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking('Cath Lab Consultation')">Book Cath Lab Consultation ↗</button>
+          <a class="btn secondary" href="technology.html">View Detailed Technology Specifications →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="section sand" id="faq">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Clear Answers</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Practical questions asked by patients and families visiting our clinic.</p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I bring previous scans done at other hospitals or labs?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              Yes, absolutely. Please bring all previous ultrasound films, Doppler reports, CT scans, MRI CDs, and blood tests. Dr. Rohan will review your original imaging plates directly, saving you from repeating unnecessary diagnostic tests.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Are interventional pinhole procedures covered by health insurance?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              Yes. Almost all major Indian health insurance policies (Star Health, HDFC ERGO, Care, ICICI Lombard, Niva Bupa, etc.) and government TPAs approve daycare interventional radiology procedures under modern surgical clauses. Our insurance desk assists you with pre-authorization.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              I am traveling from Bihar / Mirzapur. Can I return home the same day?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              Yes. For outpatient procedures such as Varicose Veins (EVLA), Thyroid RFA, and diagnostic biopsies, patients are discharged within 3 to 4 hours and can comfortably travel back by train or car on the same evening.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Is an interventional procedure completely pain-free?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              You will only feel a tiny pinch during the local numbing injection on the skin (like a small dental needle). Because the interior of blood vessels has no pain-sensing nerves, you feel no pain as the hair-thin catheter is guided inside your vascular system.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I book an appointment with Dr. Rohan?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              You can call our dedicated patient desk at <strong>1800 202 1801</strong>, send a message on WhatsApp, or click the "Book In-Clinic Consultation" button on this website to reserve your slot at our Sigra, Varanasi clinic.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Schedule Your Second Opinion</span>
+        <h2>Consult with Dr. Rohan in Varanasi</h2>
+        <p>Bring your scan reports or call our care desk to learn if a pinhole daycare procedure is the right solution for you.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Schedule Consultation ↗</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801 (Toll Free)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>
+            Compassionate, evidence-based pinhole care. Bringing premier international standards of image-guided vascular and organ treatments to Varanasi, Purvanchal, and Eastern India.
+          </p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency Line: 1800 202 1802</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>CLINIC PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Cath Lab & Tech</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Directions</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>KEY PROCEDURES</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA & Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>VARANASI CLINIC</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div>
+              <b>Dr. Rohan IR Clinic</b><br>
+              Sigra / Mahmoorganj Road, Varanasi, UP 221010
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div>
+              <b>OPD Hours:</b><br>
+              Mon – Sat: 10:00 AM – 7:00 PM<br>
+              Emergency IR: 24/7 On-Call
+            </div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:8px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic, Varanasi. All rights reserved.</span>
+        <span>Medical Disclaimer • Patient Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM BAR -->
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book Appointment ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Request</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Share your details below. Our Varanasi patient care desk will call you back within 2 hours to confirm your consultation time.
+      </p>
+
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field">
+            <label>Patient Full Name *</label>
+            <input type="text" required placeholder="e.g. Ramesh Kumar">
+          </div>
+          <div class="field">
+            <label>Mobile Number *</label>
+            <input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="e.g. 9876543210">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>City / Town</label>
+            <input type="text" placeholder="e.g. Varanasi, Mirzapur, Patna">
+          </div>
+          <div class="field">
+            <label>Condition / Procedure</label>
+            <select id="procedureInterest">
+              <option value="">Select Condition</option>
+              <option value="Varicose Veins">Varicose Veins (EVLA / Glue)</option>
+              <option value="Uterine Fibroids">Uterine Fibroids (UFE)</option>
+              <option value="Enlarged Prostate">Enlarged Prostate / BPH (PAE)</option>
+              <option value="Knee Arthritis">Knee Arthritis Pain (GAE)</option>
+              <option value="Thyroid Nodule">Thyroid Nodule Ablation (RFA)</option>
+              <option value="Liver TACE / Cancer">Liver Cancer (TACE / Ablation)</option>
+              <option value="Varicocele">Varicocele Embolization</option>
+              <option value="Dialysis Access">Dialysis Permacath / Fistula</option>
+              <option value="Second Opinion Scan Review">Second Opinion Scan Review</option>
+              <option value="Other">Other Interventional Consultation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Preferred Visit Date</label>
+            <input type="date" id="preferredDate">
+          </div>
+          <div class="field">
+            <label>Preferred Time Slot</label>
+            <select>
+              <option>Morning (10:00 AM - 1:00 PM)</option>
+              <option>Afternoon (1:00 PM - 4:00 PM)</option>
+              <option>Evening (4:00 PM - 7:00 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Brief Medical Concern or Scans Done (Optional)</label>
+          <textarea rows="3" placeholder="Describe symptoms, duration, or any ultrasound / MRI done..."></textarea>
+        </div>
+
+        <label style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <input type="checkbox" required style="width:auto;"> I consent to be contacted regarding this medical appointment.
+        </label>
+
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          Our Varanasi clinic coordinator will call you shortly on your provided mobile number. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

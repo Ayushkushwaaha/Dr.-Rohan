@@ -1,0 +1,879 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete Catalog of Interventional Radiology Treatments in Varanasi by Dr. Rohan. Minimally invasive pinhole procedures for Varicose Veins, Uterine Fibroids, Prostate (PAE), Knee Pain (GAE), Thyroid, Cancer, and Dialysis Access.">
+  <title>Treatments & Procedures | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .treatment-detail-section {
+      padding: 55px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .treatment-detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .treatment-detail-grid.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .treatment-tag-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0 18px;
+    }
+    .treatment-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--ink-light);
+    }
+    .treatment-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .treatment-feature-list li::before {
+      content: "\2714";
+      color: var(--teal);
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .category-filter-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    @media (max-width: 900px) {
+      .treatment-detail-grid, .treatment-detail-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>&#128205; <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">&#128222; Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">&#128680; Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown active">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">&#9662;</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item active">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>&#8599;</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown open">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">&#9662;</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()" class="active">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation &#8599;</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO & PROCEDURES SHOWCASE (MATCHING IR CLINIC INDIA ARCHITECTURE) -->
+    <section class="section white" style="padding: 48px 0 60px;">
+      <div class="container">
+        <div class="procedures-page-header">
+          <span class="kicker"><span class="pulse-dot"></span>Image-Guided Minimally Invasive Care</span>
+          <h1>Interventional Radiology Procedures</h1>
+          <p>
+            We perform image-guided, minimally invasive procedures designed to diagnose and treat conditions with accuracy, safety, and faster recovery. Click any procedure card below for step-by-step clinical protocols.
+          </p>
+
+          <!-- Search & Filter Toolbar -->
+          <div class="procedures-toolbar">
+            <div class="procedure-search-wrap">
+              <input type="text" id="procedureSearch" class="procedure-search-input" oninput="filterProceduresGrid()" placeholder="Search by procedure name (e.g. Chemoport, Biopsy, Fibroid, Stroke)..." aria-label="Search procedures">
+              <span class="procedure-search-icon">&#128269;</span>
+            </div>
+
+            <div class="procedure-filter-pills">
+              <button class="procedure-pill active" data-filter="all" onclick="selectProcedureCategory('all', this)">All Procedures</button>
+              <button class="procedure-pill" data-filter="cat-basic" onclick="selectProcedureCategory('cat-basic', this)">Daycare & Diagnostic</button>
+              <button class="procedure-pill" data-filter="cat-vascular" onclick="selectProcedureCategory('cat-vascular', this)">Vascular & Access</button>
+              <button class="procedure-pill" data-filter="cat-women" onclick="selectProcedureCategory('cat-women', this)">Women's Health</button>
+              <button class="procedure-pill" data-filter="cat-urology" onclick="selectProcedureCategory('cat-urology', this)">Men's Health & Urology</button>
+              <button class="procedure-pill" data-filter="cat-joints" onclick="selectProcedureCategory('cat-joints', this)">Joints & Pain</button>
+              <button class="procedure-pill" data-filter="cat-oncology" onclick="selectProcedureCategory('cat-oncology', this)">Oncology & Liver</button>
+              <button class="procedure-pill" data-filter="cat-neuro" onclick="selectProcedureCategory('cat-neuro', this)">Neuro-Intervention</button>
+            </div>
+
+            <div style="font-size:13px;color:var(--muted);font-weight:600;" id="procedureResultsCount">
+              Showing 20 procedures &bull; Click any card for full clinical details
+            </div>
+          </div>
+        </div>
+
+                <!-- 4-COLUMN PROCEDURE CARDS GRID (WITH REAL CLINICAL ILLUSTRATION IMAGES) -->
+        <div class="procedures-grid" id="proceduresGrid">
+          
+          <!-- 1. USG & CT Guided FNAC/Biopsy -->
+          <div class="proc-card cat-basic" data-title="USG & CT Guided FNAC/BIOPSY" data-category="cat-basic" data-desc="diagnostic tissue sampling fine needle biopsy thyroid lung liver" onclick="openProcedureDetail('fnac-biopsy')">
+            <span class="proc-card-category-badge">DIAGNOSTIC IR</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/fnac-biopsy.png" alt="USG & CT Guided FNAC/BIOPSY" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/680601cba172b8b98a11e79a'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">USG & CT Guided FNAC/BIOPSY</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 2. USG & CT Guided Pigtail/Drainage -->
+          <div class="proc-card cat-basic" data-title="USG & CT Guided Pigtail/Drainage" data-category="cat-basic" data-desc="abscess drainage liver pleural fluid pigtail catheter" onclick="openProcedureDetail('pigtail-drainage')">
+            <span class="proc-card-category-badge">DAYCARE DRAINAGE</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/pigtail-drainage.png" alt="USG & CT Guided Pigtail/Drainage" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/6811fe3ccbdce5d229aa3b43'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">USG & CT Guided Pigtail/Drainage</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 3. PICC Line -->
+          <div class="proc-card cat-vascular" data-title="PICC (Peripherally Inserted Central Catheter/ PICC Line)" data-category="cat-vascular" data-desc="long term intravenous antibiotics iv nutrition picc line arm vein" onclick="openProcedureDetail('picc-line')">
+            <span class="proc-card-category-badge">VASCULAR ACCESS</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/picc-line.png" alt="PICC Line Insertion" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/682b0f90dfa055da3c389a46'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">PICC Line (Peripherally Inserted Catheter)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 4. Hickman/Permcath Dialysis Catheters -->
+          <div class="proc-card cat-vascular" data-title="Hickman/Permcath Dialysis (Tunnelled) Catheters Insertion" data-category="cat-vascular" data-desc="permcath dialysis kidney failure tunnelled vascular access hemodialysis" onclick="openProcedureDetail('dialysis-catheter')">
+            <span class="proc-card-category-badge">DIALYSIS ACCESS</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/dialysis-catheter.png" alt="Hickman Permcath Dialysis Catheters" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/682b14d5dfa055da3c389b16'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Hickman / Permcath Dialysis Catheter</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 5. Chemoport Insertion -->
+          <div class="proc-card cat-oncology" data-title="Chemoport Insertion" data-category="cat-oncology" data-desc="cancer chemotherapy venous port subcutaneous access implantable port" onclick="openProcedureDetail('chemoport')">
+            <span class="proc-card-category-badge">ONCOLOGY ACCESS</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/chemoport.png" alt="Chemoport Insertion" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/682b28dadfa055da3c38a1d2'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Chemoport Insertion for Chemotherapy</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 6. Intravascular Foreign Body Removal -->
+          <div class="proc-card cat-vascular" data-title="Intravascular Foreign Body Removal" data-category="cat-vascular" data-desc="snare retrieval lost catheter broken wire foreign body extraction" onclick="openProcedureDetail('foreign-body')">
+            <span class="proc-card-category-badge">EMERGENCY IR</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/foreign-body.png" alt="Intravascular Foreign Body Removal" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/682b2a7adfa055da3c38a1e8'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Intravascular Foreign Body Removal</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 7. Central Venous Catheter (CVC) -->
+          <div class="proc-card cat-vascular" data-title="Central Venous Catheter (CVC) Insertion: Procedure, Types & Risks" data-category="cat-vascular" data-desc="cvc central line intensive care neck vein cannulation" onclick="openProcedureDetail('cvc-insertion')">
+            <span class="proc-card-category-badge">CRITICAL ACCESS</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/cvc-insertion.png" alt="Central Venous Catheter (CVC) Insertion" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d7f8580f3ef3f68c134a4'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Central Venous Catheter (CVC) Insertion</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 8. Diagnostic Cerebral and Spinal Angiography -->
+          <div class="proc-card cat-neuro" data-title="Diagnostic Cerebral and Spinal Angiography" data-category="cat-neuro" data-desc="cerebral angiography brain vessels dsa stroke spinal aneurysm" onclick="openProcedureDetail('cerebral-angio')">
+            <span class="proc-card-category-badge">NEURO-VASCULAR</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/cerebral-angio.png" alt="Diagnostic Cerebral and Spinal Angiography" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d840280f3ef3f68c13650'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Diagnostic Cerebral & Spinal Angiography</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 9. Carotid & Vertebral Angioplasty / Stenting -->
+          <div class="proc-card cat-neuro" data-title="Carotid & Vertebral Angioplasty /Stenting" data-category="cat-neuro" data-desc="carotid artery stenosis neck stent stroke prevention balloon angioplasty" onclick="openProcedureDetail('carotid-stenting')">
+            <span class="proc-card-category-badge">STROKE PREVENTION</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/carotid-stenting.png" alt="Carotid & Vertebral Angioplasty / Stenting" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d882e80f3ef3f68c136a9'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Carotid & Vertebral Angioplasty / Stenting</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 10. Mechanical Thrombectomy for Acute Stroke -->
+          <div class="proc-card cat-neuro" data-title="Mechanical Thrombectomy for Acute Ischemic Stroke" data-category="cat-neuro" data-desc="acute ischemic stroke clot removal stent retriever golden hour paralysis" onclick="openProcedureDetail('thrombectomy')">
+            <span class="proc-card-category-badge">EMERGENCY STROKE</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/thrombectomy.png" alt="Mechanical Thrombectomy for Acute Stroke" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d92ba80f3ef3f68c13a4f'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Mechanical Thrombectomy for Stroke</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 11. Intracranial Angioplasty & Stenting -->
+          <div class="proc-card cat-neuro" data-title="Intracranial Angioplasty & Stenting" data-category="cat-neuro" data-desc="brain vessel stenting intracranial atherosclerosis mca basilar" onclick="openProcedureDetail('intracranial-stent')">
+            <span class="proc-card-category-badge">NEURO INTERVENTION</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/intracranial-stent.png" alt="Intracranial Angioplasty & Stenting" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d961180f3ef3f68c13b56'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Intracranial Angioplasty & Stenting</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 12. Brain Aneurysm Coiling & Flow Diverters -->
+          <div class="proc-card cat-neuro" data-title="Brain Aneurysm-Coiling, Flow Diverter, Parent Vessel Occlusion" data-category="cat-neuro" data-desc="brain aneurysm coiling flow diverter subarachnoid hemorrhage" onclick="openProcedureDetail('aneurysm-coiling')">
+            <span class="proc-card-category-badge">ANEURYSM REPAIR</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/aneurysm-coiling.png" alt="Brain Aneurysm Coiling & Flow Diverters" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683d992380f3ef3f68c13bf2'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Brain Aneurysm Coiling & Flow Diverters</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 13. Varicose Veins EVLA & VenaSeal Glue -->
+          <div class="proc-card cat-vascular" data-title="Varicose Veins EVLA Laser & VenaSeal Glue" data-category="cat-vascular" data-desc="varicose veins laser evla venaseal glue leg ulcers swelling" onclick="openProcedureDetail('varicose-veins')">
+            <span class="proc-card-category-badge">VASCULAR CARE</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/varicose-veins.png" alt="Varicose Veins EVLA Laser & VenaSeal Glue" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683fdb909f1d66aedd186677'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Varicose Veins: EVLA Laser & VenaSeal</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 14. Uterine Fibroid Embolization (UFE) -->
+          <div class="proc-card cat-women" data-title="Uterine Fibroid Embolization (UFE / UAE)" data-category="cat-women" data-desc="uterine fibroids ufe adenomyosis heavy periods save uterus hysterectomy alternative" onclick="openProcedureDetail('fibroid-ufe')">
+            <span class="proc-card-category-badge">WOMEN'S HEALTH</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/fibroid-ufe.png" alt="Uterine Fibroid Embolization (UFE)" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ef3b79f1d66aedd186247'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Uterine Fibroid Embolization (UFE)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 15. Prostate Artery Embolization (PAE) -->
+          <div class="proc-card cat-urology" data-title="Prostate Artery Embolization (PAE)" data-category="cat-urology" data-desc="enlarged prostate bph pae frequent urination turp alternative non surgical" onclick="openProcedureDetail('prostate-pae')">
+            <span class="proc-card-category-badge">MEN'S HEALTH</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/prostate-pae.png" alt="Prostate Artery Embolization (PAE)" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ed1ea9f1d66aedd18561c'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Prostate Artery Embolization (PAE)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 16. Genicular Artery Embolization (GAE) for Knee Pain -->
+          <div class="proc-card cat-joints" data-title="Genicular Artery Embolization (GAE) for Knee Pain" data-category="cat-joints" data-desc="knee arthritis pain genicular artery embolization joint pain knee replacement alternative" onclick="openProcedureDetail('knee-gae')">
+            <span class="proc-card-category-badge">JOINT CARE</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/knee-gae.png" alt="Genicular Artery Embolization (GAE)" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683eeb3f9f1d66aedd185f27'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Knee Arthritis: Genicular Artery Embolization</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 17. Thyroid Nodule Ablation (RFA) -->
+          <div class="proc-card cat-basic" data-title="Thyroid Nodule Ablation (RFA / Microwave)" data-category="cat-basic" data-desc="thyroid nodule goitre benign neck swelling radiofrequency ablation no scar" onclick="openProcedureDetail('thyroid-rfa')">
+            <span class="proc-card-category-badge">HEAD & NECK</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/thyroid-rfa.png" alt="Thyroid Nodule Ablation (RFA)" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ff4039f1d66aedd186a83'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Thyroid Nodule Ablation (RFA)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 18. Liver TACE & TARE for Cancer -->
+          <div class="proc-card cat-oncology" data-title="Liver TACE & TARE (Transarterial Chemoembolization)" data-category="cat-oncology" data-desc="liver cancer tace tare hcc liver metastasis chemoembolization interventional oncology" onclick="openProcedureDetail('liver-tace')">
+            <span class="proc-card-category-badge">ONCOLOGY CARE</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/liver-tace.png" alt="Liver TACE & TARE for Cancer" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683da4dd80f3ef3f68c13cdc'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Liver TACE & TARE (Targeted Chemo)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 19. Varicocele Embolization -->
+          <div class="proc-card cat-urology" data-title="Varicocele Embolization (Male Fertility & Pain)" data-category="cat-urology" data-desc="varicocele embolization male infertility low sperm count scrotal pain pinhole" onclick="openProcedureDetail('varicocele')">
+            <span class="proc-card-category-badge">MEN'S HEALTH</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/varicocele.png" alt="Varicocele Embolization" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/68a6f6e6f2f21d06e8c1b49e'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">Varicocele Embolization (Fertility & Pain)</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 20. DVT Catheter Thrombolysis & IVC Filter -->
+          <div class="proc-card cat-vascular" data-title="DVT Catheter Thrombolysis & IVC Filter" data-category="cat-vascular" data-desc="dvt deep vein thrombosis clot dissolving catheter ivc filter pulmonary embolism" onclick="openProcedureDetail('dvt-thrombolysis')">
+            <span class="proc-card-category-badge">VASCULAR EMERGENCY</span>
+            <div class="proc-card-visual">
+              <img src="images/procedures/dvt-thrombolysis.png" alt="DVT Catheter Thrombolysis & IVC Filter" class="proc-card-img" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683fee259f1d66aedd1869b5'" loading="lazy">
+            </div>
+            <div class="proc-card-bottom">
+              <h3 class="proc-card-title">DVT Catheter Thrombolysis & IVC Filter</h3>
+              <span class="proc-card-btn" aria-label="View procedure details">&rarr;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCEDURE DETAIL POPUP MODAL (CLINICAL PROTOCOL & RECOVERY) -->
+    <div class="proc-detail-modal" id="procedureDetailModal" onclick="if(event.target===this)closeProcedureDetail()" aria-modal="true" role="dialog">
+      <div class="proc-detail-card">
+        <div class="proc-detail-header">
+          <div class="proc-detail-header-text">
+            <span class="kicker" id="pModalCategory">Category</span>
+            <h2 id="pModalTitle">Procedure Title</h2>
+          </div>
+          <button class="proc-detail-close" onclick="closeProcedureDetail()" aria-label="Close procedure details modal">&times;</button>
+        </div>
+        
+        <div class="proc-detail-body">
+          <!-- Quick Clinical Badges -->
+          <div class="proc-metrics-row">
+            <div class="proc-metric-box">
+              <span>Duration</span>
+              <strong id="pMetricDuration">30&ndash;45 Mins</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Anesthesia</span>
+              <strong id="pMetricAnesthesia">Local Numbing</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Hospital Stay</span>
+              <strong id="pMetricStay">Daycare (Same Day)</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Incision</span>
+              <strong id="pMetricIncision">2mm Pinhole</strong>
+            </div>
+          </div>
+
+          <!-- 1. Clinical Overview -->
+          <div class="proc-info-block">
+            <h3>Clinical Overview & Mechanism</h3>
+            <p id="pModalOverview">Description will appear here...</p>
+          </div>
+
+          <!-- 2. Indications -->
+          <div class="proc-info-block">
+            <h3>Clinical Indications (When Is It Needed?)</h3>
+            <ul class="proc-bullet-list" id="pModalIndications"></ul>
+          </div>
+
+          <!-- 3. Step-by-Step Protocol -->
+          <div class="proc-info-block">
+            <h3>Step-by-Step Image-Guided Protocol</h3>
+            <div id="pModalProtocol"></div>
+          </div>
+
+          <!-- 4. Advantages vs Surgery -->
+          <div class="proc-info-block">
+            <h3>Key Advantages vs Open Surgery</h3>
+            <ul class="proc-bullet-list" id="pModalAdvantages"></ul>
+          </div>
+
+          <!-- 5. Recovery -->
+          <div class="proc-info-block">
+            <h3>Recovery & Post-Procedure Care</h3>
+            <p id="pModalRecovery" style="margin:0;"></p>
+          </div>
+        </div>
+
+        <div class="proc-detail-footer">
+          <div>
+            <a href="tel:18002021801" style="font-weight:700;color:var(--teal);font-size:13.5px;text-decoration:none;">&#128222; Toll-Free Helpline: 1800 202 1801</a>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn secondary" onclick="closeProcedureDetail()">Close</button>
+            <button class="btn" id="pModalBookBtn" onclick="bookProcedureFromModal()">Book Consultation for this Procedure &#8599;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. VARICOSE VEINS -->
+    <section class="treatment-detail-section white" id="varicose" style="overflow:hidden;">
+      <div class="container treatment-detail-grid">
+        <div class="reveal-left">
+          <span class="kicker">Vascular & Venous Care</span>
+          <h2>Varicose Veins: Endovenous Laser (EVLA) & VenaSeal Glue</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Endovenous Laser (EVLA)</span>
+            <span class="condition-tag">Radiofrequency (RFA)</span>
+            <span class="condition-tag">VenaSeal Medical Glue</span>
+            <span class="condition-tag">Foam Sclerotherapy</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            Varicose veins occur when faulty valves cause blood to pool in leg veins, leading to pain, swelling, heaviness, discoloration, and non-healing venous ulcers. Traditional vein stripping surgery required painful cuts and long hospital stays.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>Laser & RFA Thermal Ablation:</strong> Under ultrasound guidance, a hair-thin optical fiber gently seals diseased veins from the inside.</li>
+            <li><strong>VenaSeal Glue:</strong> A proprietary medical adhesive seals the vein without any heat or multiple tumescent needle pricks.</li>
+            <li><strong>Walk-In, Walk-Out:</strong> Entirely performed under local numbing in 30&ndash;45 minutes. Walk home immediately with zero stitches.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Varicose Veins')">Consult for Varicose Veins &#8599;</button>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-card" onclick="openProcedureDetail('varicose-veins')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/varicose-veins.png" alt="Varicose Vein Treatment Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683fdb909f1d66aedd186677'">
+            <div class="hero-card-caption">
+              <strong>98%+ Success Rate</strong>
+              <small>ZERO HOSPITALIZATION &bull; DAYCARE &bull; WALK IMMEDIATELY</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. UTERINE FIBROIDS (UFE) -->
+    <section class="treatment-detail-section soft" id="fibroids" style="overflow:hidden;">
+      <div class="container treatment-detail-grid reverse">
+        <div class="reveal-left">
+          <div class="hero-card" onclick="openProcedureDetail('fibroid-ufe')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/fibroid-ufe.png" alt="Uterine Fibroid Embolization Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ef3b79f1d66aedd186247'">
+            <div class="hero-card-caption">
+              <strong>Preserve Your Uterus</strong>
+              <small>NON-SURGICAL HYSTERECTOMY ALTERNATIVE</small>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="kicker">Women's Health</span>
+          <h2>Uterine Fibroid Embolization (UFE / UAE)</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Uterine Fibroids</span>
+            <span class="condition-tag">Adenomyosis</span>
+            <span class="condition-tag">Heavy Menstrual Bleeding</span>
+            <span class="condition-tag">Pelvic Pain Relief</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            Uterine Fibroids are benign muscular tumors in the uterus causing severe bleeding, anemia, and intense pelvic pressure. Women are often told hysterectomy (uterus removal) is their only choice&mdash;this is no longer true.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>How UFE Works:</strong> A microcatheter is guided via a tiny wrist or groin pinhole into the uterine arteries. Microscopic embolic particles block the fibroid's blood supply.</li>
+            <li><strong>Fibroid Shrinkage:</strong> Deprived of blood, fibroids shrink by 60&ndash;80% and soften, stopping abnormal bleeding within 1&ndash;2 cycles.</li>
+            <li><strong>Uterus Intact:</strong> The normal uterus remains completely healthy. Avoids surgical menopause, surgical adhesions, and long bed rest.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Uterine Fibroids (UFE)')">Consult for UFE / Fibroids &#8599;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROSTATE BPH (PAE) -->
+    <section class="treatment-detail-section white" id="prostate" style="overflow:hidden;">
+      <div class="container treatment-detail-grid">
+        <div class="reveal-left">
+          <span class="kicker">Men's Health & Urology</span>
+          <h2>Prostate Artery Embolization (PAE for BPH)</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Benign Prostatic Hyperplasia (BPH)</span>
+            <span class="condition-tag">Enlarged Prostate</span>
+            <span class="condition-tag">Preserves Sexual Function</span>
+            <span class="condition-tag">No Penile Surgery</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            Men over 50 frequently suffer from urinary urgency, weak stream, frequent nighttime urination, and retention caused by an enlarged prostate gland. Traditional TURP surgery cuts through the urethra, carrying risks of retrograde ejaculation and incontinence.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>Catheter-Directed Pinhole Relief:</strong> Dr. Rohan navigates microscopic catheters from the wrist artery down to the tiny vessels feeding the prostate.</li>
+            <li><strong>Preserves Sexual Function:</strong> Because the urethra and nerves are never touched or cut, PAE eliminates the risk of erectile dysfunction or retrograde ejaculation.</li>
+            <li><strong>Discharge in 24 Hours:</strong> Patients experience noticeable improvement in urinary flow within 1 to 2 weeks as the prostate gently shrinks.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Prostate PAE')">Consult for Prostate (PAE) &#8599;</button>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-card" onclick="openProcedureDetail('prostate-pae')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/prostate-pae.png" alt="Prostate Artery Embolization Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ed1ea9f1d66aedd18561c'">
+            <div class="hero-card-caption">
+              <strong>Non-Surgical BPH Relief</strong>
+              <small>ZERO INCONTINENCE &bull; AVOIDS TURP &bull; DAYCARE</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. KNEE ARTHRITIS (GAE) -->
+    <section class="treatment-detail-section soft" id="knee" style="overflow:hidden;">
+      <div class="container treatment-detail-grid reverse">
+        <div class="reveal-left">
+          <div class="hero-card" onclick="openProcedureDetail('knee-gae')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/knee-gae.png" alt="Genicular Artery Embolization Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683eeb3f9f1d66aedd185f27'">
+            <div class="hero-card-caption">
+              <strong>Knee Pain Breakthrough</strong>
+              <small>AVOID / DELAY TOTAL KNEE REPLACEMENT</small>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="kicker">Musculoskeletal & Pain Care</span>
+          <h2>Genicular Artery Embolization (GAE) for Knee Pain</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Knee Osteoarthritis</span>
+            <span class="condition-tag">Chronic Joint Inflammation</span>
+            <span class="condition-tag">Non-Surgical Relief</span>
+            <span class="condition-tag">Mobility Restoration</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            For patients suffering from mild-to-moderate knee osteoarthritis who haven't responded to physiotherapy or joint injections, GAE offers a groundbreaking, non-surgical pathway to lasting pain relief.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>Targeting Chronic Inflammation:</strong> Osteoarthritis stimulates abnormal new micro-vessels (hypervascularity) and sensory nerve sprouting that drive chronic knee pain.</li>
+            <li><strong>Precision Embolization:</strong> Under X-ray guidance, micro-particles block these abnormal inflammatory vessels while preserving healthy knee circulation.</li>
+            <li><strong>Significant Pain Reduction:</strong> Up to 80% of patients report dramatic pain reduction and improved walking distance within 2 weeks.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Knee Pain (GAE)')">Consult for Knee Arthritis (GAE) &#8599;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THYROID ABLATION -->
+    <section class="treatment-detail-section white" id="thyroid" style="overflow:hidden;">
+      <div class="container treatment-detail-grid">
+        <div class="reveal-left">
+          <span class="kicker">Endocrine & Neck</span>
+          <h2>Thyroid Nodule Radiofrequency Ablation (RFA)</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Benign Thyroid Nodules</span>
+            <span class="condition-tag">No Neck Scars</span>
+            <span class="condition-tag">Preserves Thyroid Hormones</span>
+            <span class="condition-tag">30-Minute Outpatient</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            Benign thyroid nodules can grow large, causing cosmetic neck lumps, difficulty swallowing, or a choking feeling. Traditional surgery removes part or all of the thyroid gland, leaving a prominent neck scar and requiring lifelong daily hormone replacement pills.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>Scarless Needle Puncture:</strong> An ultra-fine specialized electrode is guided directly into the nodule under high-resolution real-time ultrasound.</li>
+            <li><strong>Thermal Shrinkage:</strong> Radiofrequency energy precisely heats and coagulates the nodule tissue, causing it to shrink by 50&ndash;90% over time.</li>
+            <li><strong>No Lifelong Pills:</strong> The surrounding healthy thyroid gland is untouched, so patients maintain their natural hormone production.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Thyroid RFA')">Consult for Thyroid Nodule RFA &#8599;</button>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-card" onclick="openProcedureDetail('thyroid-rfa')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/thyroid-rfa.png" alt="Thyroid Nodule Ablation Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683ff4039f1d66aedd186a83'">
+            <div class="hero-card-caption">
+              <strong>Zero Neck Scar</strong>
+              <small>PROTECTS NATURAL THYROID FUNCTION</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ONCOLOGY & CHEMOTHERAPY VASCULAR ACCESS -->
+    <section class="treatment-detail-section soft" id="oncology" style="overflow:hidden;">
+      <div class="container treatment-detail-grid reverse">
+        <div class="reveal-left">
+          <div class="hero-card" onclick="openProcedureDetail('liver-tace')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/liver-tace.png" alt="Interventional Oncology TACE Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/683da4dd80f3ef3f68c13cdc'">
+            <div class="hero-card-caption">
+              <strong>Targeted Cancer Care</strong>
+              <small>TACE &bull; TARE &bull; MICROWAVE ABLATION</small>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="kicker">Interventional Oncology</span>
+          <h2>TACE, TARE & Tumor Ablation</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Liver Cancer (HCC / Metastases)</span>
+            <span class="condition-tag">TACE (Chemoembolization)</span>
+            <span class="condition-tag">TARE (Yttrium-90)</span>
+            <span class="condition-tag">Microwave / Cryoablation</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            For tumors that are inoperable or for patients unsuitable for extensive open resection, Interventional Oncology provides targeted local tumor destruction with minimal collateral damage to normal organs.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>TACE:</strong> Super-selective catheters deliver high-dose chemo drugs directly inside the tumor's feeding vessels, then seal them to starve the tumor.</li>
+            <li><strong>Microwave Ablation:</strong> Needle antennas inserted directly into tumors in the liver, lung, kidney, or bone destroy malignant cells with pinpoint heat.</li>
+            <li><strong>Minimal Systemic Toxicity:</strong> Because chemo is concentrated locally, nausea, hair loss, and systemic weakness are significantly minimized.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Interventional Oncology')">Consult for Oncology Care &#8599;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DIALYSIS ACCESS & PERMACATH -->
+    <section class="treatment-detail-section white" id="dialysis" style="overflow:hidden;">
+      <div class="container treatment-detail-grid">
+        <div class="reveal-left">
+          <span class="kicker">Vascular Access & Dialysis Support</span>
+          <h2>Chemoports, PICC Lines & Dialysis Access</h2>
+          <div class="treatment-tag-row">
+            <span class="condition-tag">Chemoport Insertion</span>
+            <span class="condition-tag">PICC Line Placement</span>
+            <span class="condition-tag">Permacath (Tunnelled Line)</span>
+            <span class="condition-tag">AV Fistula Angioplasty</span>
+          </div>
+          <p style="color:var(--muted);font-size:15px;line-height:1.8;">
+            Safe, reliable vascular access is a lifeline for cancer patients undergoing chemotherapy and chronic kidney disease patients needing hemodialysis.
+          </p>
+          <ul class="treatment-feature-list">
+            <li><strong>Chemoport Insertion:</strong> A small titanium port placed under the chest skin prevents painful repeated vein punctures during cancer treatment.</li>
+            <li><strong>Permacath & Hickman Lines:</strong> Long-term tunnelled dialysis catheters placed under real-time ultrasound and fluoroscopic guidance ensure maximum blood flow and zero line kinking.</li>
+            <li><strong>AV Fistula Salvage:</strong> Image-guided balloon angioplasty opens up clotted or narrowed dialysis fistulas, rescuing them without surgical remake.</li>
+          </ul>
+          <button class="btn" onclick="openBooking('Dialysis Access')">Consult for Vascular Access &#8599;</button>
+        </div>
+        <div class="reveal-right">
+          <div class="hero-card" onclick="openProcedureDetail('chemoport')" title="Click to open full clinical protocol">
+            <div class="flyer-badge-top">
+              <span class="flyer-tag">CLINICAL PROCEDURE FLYER</span>
+              <span class="flyer-zoom-hint">Open Protocol &#8599;</span>
+            </div>
+            <img class="hero-img" src="images/procedures/chemoport.png" alt="Chemoport & Vascular Access Protocol Flyer" onerror="this.onerror=null;this.src='https://api.interventionalradiology.co.in/api/v1/services/getServiceImage/682b28dadfa055da3c38a1d2'">
+            <div class="hero-card-caption">
+              <strong>Lifeline Access Management</strong>
+              <small>ZERO-FAIL ULTRASOUND-GUIDED PLACEMENT</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Need Advice on Your Specific Report?</span>
+        <h2>Consult Dr. Rohan for a Pinhole Treatment Plan</h2>
+        <p>Send your scan reports or call our helpline to learn if you are an ideal candidate for minimally invasive daycare therapy.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Schedule Appointment &#8599;</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">&#128222; Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">&#128680; 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="#prostate">Enlarged Prostate (PAE)</a>
+          <a href="#knee">Knee Arthritis (GAE)</a>
+          <a href="#thyroid">Thyroid Nodule Ablation</a>
+          <a href="#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>&#128205;</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>&#128340;</span>
+            <div><b>Consultation Hours:</b><br>Mon &ndash; Sat: 10:00 AM &ndash; 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>&copy; 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer &bull; Privacy Policy &bull; Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation &#8599;</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">&times;</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Procedure of Interest</label><input type="text" id="procedureInterest" placeholder="e.g. Varicose Veins, UFE, Prostate"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request &rarr;</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

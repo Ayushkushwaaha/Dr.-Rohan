@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conditions We Treat with Interventional Radiology in Varanasi. Check your symptoms and explore non-surgical pinhole solutions for varicose veins, fibroids, prostate, knee pain, and vascular issues.">
+  <title>Conditions We Treat | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CONDITIONS TOOLBAR (SEARCH & FILTER PILLS) */
+    .conditions-toolbar {
+      margin: 0 auto 36px;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+    }
+    .condition-search-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 620px;
+    }
+    .condition-search-input {
+      width: 100%;
+      padding: 13px 44px 13px 20px;
+      border-radius: 30px;
+      border: 1.5px solid var(--border, #d2dedb);
+      background: #ffffff;
+      font-size: 14px;
+      color: var(--ink);
+      box-shadow: 0 4px 14px rgba(12, 33, 50, 0.04);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .condition-search-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 4px 18px rgba(24, 104, 98, 0.15);
+    }
+    .condition-search-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .condition-filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .condition-pill {
+      border: 1px solid var(--border, #d2dedb);
+      background: #ffffff;
+      color: var(--ink);
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .condition-pill:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .condition-pill.active {
+      background: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+      box-shadow: 0 3px 10px rgba(24, 104, 98, 0.25);
+    }
+
+    /* INTERACTIVE CONDITION CARDS */
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 980px) {
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .conditions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .condition-card {
+      background: #ffffff;
+      border: 1.5px solid var(--line, #e2ebe8);
+      border-radius: 14px;
+      padding: 26px 24px 20px;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      text-align: left;
+    }
+    .condition-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(12, 33, 50, 0.12);
+      border-color: var(--teal);
+    }
+    .condition-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .condition-cat-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      background: rgba(24, 104, 98, 0.08);
+      padding: 4px 10px;
+      border-radius: 14px;
+    }
+    .condition-badge-click {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #f0f7f6;
+      border: 1px solid #d0e5e2;
+      padding: 3px 9px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .condition-card:hover .condition-badge-click {
+      background: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+    }
+
+    .condition-card h3 {
+      font-family: var(--serif, 'DM Serif Display', Georgia, serif);
+      font-size: 22px;
+      line-height: 1.3;
+      margin: 4px 0 10px;
+      color: var(--oxford, #0c2132);
+    }
+    .condition-card p.condition-desc {
+      color: var(--muted, #5f7571);
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .symptom-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .symptom-tag {
+      background: #f4f7f6;
+      border: 1px solid #d5e4e0;
+      padding: 4px 9px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      color: var(--teal-dark);
+      font-weight: 500;
+    }
+
+    .solution-box {
+      background: #f0f7f6;
+      border-left: 3px solid var(--teal);
+      padding: 11px 13px;
+      border-radius: 4px;
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .solution-box strong {
+      color: var(--teal-dark);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .condition-card-action {
+      margin-top: 15px;
+      padding-top: 13px;
+      border-top: 1px dashed var(--line, #e2ebe8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .action-arrow {
+      font-size: 15px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .condition-card:hover .action-arrow {
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>&#128205; <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">&#128222; Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">&#128680; Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown active">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">&#9662;</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item active">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>&#8599;</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown open">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">&#9662;</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()" class="active">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation &#8599;</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero" style="padding:55px 0 40px;">
+      <div class="container" style="text-align:center;max-width:850px;">
+        <span class="kicker">Symptom Checker & Clinical Indications</span>
+        <h1>Conditions We Treat</h1>
+        <p class="hero-copy" style="margin:0 auto;">
+          Many debilitating ailments that once required major open surgeries can now be resolved through 2mm pinhole interventional procedures. <strong>Click any disease card below</strong> to view complete medical pathology, symptom checklists, and non-surgical IR solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONDITIONS & DISEASES SECTION -->
+    <section class="section white" id="diseases" style="padding-top:20px;">
+      <div class="container" id="symptoms">
+
+        <!-- Toolbar: Search & Category Filter Pills -->
+        <div class="conditions-toolbar">
+          <div class="condition-search-wrap">
+            <input type="text" id="conditionSearch" class="condition-search-input" oninput="filterConditionsGrid()" placeholder="Search condition or symptom (e.g. Varicose, Fibroids, Prostate, Knee pain, Clots, Stroke)..." aria-label="Search conditions and symptoms">
+            <span class="condition-search-icon">&#128269;</span>
+          </div>
+
+          <div class="condition-filter-pills">
+            <button class="condition-pill active" data-filter="all" onclick="selectConditionCategory('all', this)">All Conditions</button>
+            <button class="condition-pill" data-filter="cat-vascular" onclick="selectConditionCategory('cat-vascular', this)">Vascular & Access</button>
+            <button class="condition-pill" data-filter="cat-women" onclick="selectConditionCategory('cat-women', this)">Women's Health</button>
+            <button class="condition-pill" data-filter="cat-urology" onclick="selectConditionCategory('cat-urology', this)">Men's Health & Urology</button>
+            <button class="condition-pill" data-filter="cat-joints" onclick="selectConditionCategory('cat-joints', this)">Joints & Pain</button>
+            <button class="condition-pill" data-filter="cat-oncology" onclick="selectConditionCategory('cat-oncology', this)">Oncology & Liver</button>
+            <button class="condition-pill" data-filter="cat-neck" onclick="selectConditionCategory('cat-neck', this)">Endocrine & Neck</button>
+            <button class="condition-pill" data-filter="cat-neuro" onclick="selectConditionCategory('cat-neuro', this)">Neuro-Intervention</button>
+          </div>
+
+          <div style="font-size:13px;color:var(--muted);font-weight:600;" id="conditionResultsCount">
+            Showing 12 conditions &bull; Click any card for full disease details
+          </div>
+        </div>
+
+        <!-- 3-COLUMN INTERACTIVE CONDITIONS GRID -->
+        <div class="conditions-grid" id="conditionsGrid">
+
+          <!-- 1. Varicose Veins & Venous Ulcers -->
+          <div class="condition-card" data-id="varicose-veins" data-category="cat-vascular" data-title="Varicose Veins & Venous Ulcers" data-desc="swollen veins reflux leg ulcer aching heaviness cramps pigmentation evla laser venaseal" onclick="openDiseaseDetail('varicose-veins')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Vascular Health</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Varicose Veins & Venous Ulcers</h3>
+            <p class="condition-desc">
+              Swollen, tortuous leg veins caused by failing one-way valves, resulting in pooling venous reflux, leg heaviness, and chronic stasis skin ulcers.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Heavy, aching legs</span>
+              <span class="symptom-tag">Ankle swelling</span>
+              <span class="symptom-tag">Night calf cramps</span>
+              <span class="symptom-tag">Dark skin pigmentation</span>
+              <span class="symptom-tag">Non-healing leg ulcers</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Laser (EVLA), Radiofrequency, or VenaSeal Glue. 30-min daycare closure.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 2. Uterine Fibroids & Adenomyosis -->
+          <div class="condition-card" data-id="uterine-fibroids" data-category="cat-women" data-title="Uterine Fibroids & Adenomyosis" data-desc="uterine fibroids adenomyosis heavy periods bleeding clots pelvic pain anemia ufe save uterus" onclick="openDiseaseDetail('uterine-fibroids')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Women's Health</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Uterine Fibroids & Adenomyosis</h3>
+            <p class="condition-desc">
+              Benign muscular tumors inside the uterus causing excessive menstrual bleeding, severe anemia, pelvic fullness, and intense periodic cramping.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Excessive menstrual bleeding</span>
+              <span class="symptom-tag">Passing large clots</span>
+              <span class="symptom-tag">Severe period cramps</span>
+              <span class="symptom-tag">Pelvic pressure/fullness</span>
+              <span class="symptom-tag">Frequent urination</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Uterine Fibroid Embolization (UFE). Shrinks fibroids, saves the uterus.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 3. Enlarged Prostate (BPH) -->
+          <div class="condition-card" data-id="enlarged-prostate" data-category="cat-urology" data-title="Enlarged Prostate (BPH)" data-desc="enlarged prostate bph weak stream nocturia urinary retention pae embolization turp alternative" onclick="openDiseaseDetail('enlarged-prostate')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Men's Health & Urology</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Enlarged Prostate (BPH)</h3>
+            <p class="condition-desc">
+              Non-cancerous enlargement of the prostate gland in men aged 50+, pinching the urethra and obstructing normal bladder outflow.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Weak urine stream</span>
+              <span class="symptom-tag">Waking multiple times at night</span>
+              <span class="symptom-tag">Difficulty starting urination</span>
+              <span class="symptom-tag">Urinary retention / catheter</span>
+              <span class="symptom-tag">Urgency & dribbling</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Prostate Artery Embolization (PAE). No surgery via urethra, zero sexual side-effects.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 4. Knee Osteoarthritis & Joint Pain -->
+          <div class="condition-card" data-id="knee-osteoarthritis" data-category="cat-joints" data-title="Knee Osteoarthritis & Joint Pain" data-desc="knee arthritis joint pain stiffness swelling stairs gae embolization avoid knee replacement" onclick="openDiseaseDetail('knee-osteoarthritis')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Joints & Pain Care</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Knee Osteoarthritis & Joint Pain</h3>
+            <p class="condition-desc">
+              Degenerative cartilage wear accompanied by chronic inflammatory neo-vessel proliferation fueling persistent, aching knee joint pain.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Pain walking or climbing stairs</span>
+              <span class="symptom-tag">Morning knee joint stiffness</span>
+              <span class="symptom-tag">Swelling around the knee</span>
+              <span class="symptom-tag">Failed pain medicines/gels</span>
+              <span class="symptom-tag">Desire to avoid knee surgery</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Genicular Artery Embolization (GAE). Blocks pain vessels, relieves stiffness.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 5. Benign Thyroid Nodules & Neck Goitres -->
+          <div class="condition-card" data-id="thyroid-nodules" data-category="cat-neck" data-title="Thyroid Nodules & Neck Goitres" data-desc="thyroid nodule neck swelling goitre swallowing lump throat cosmetic rfa microwave ablation" onclick="openDiseaseDetail('thyroid-nodules')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Endocrine & Neck</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Thyroid Nodules & Neck Goitres</h3>
+            <p class="condition-desc">
+              Benign lumps or cysts in the thyroid gland causing visible neck bulging, throat constriction, difficulty swallowing solids, and cosmetic anxiety.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Visible lump in lower neck</span>
+              <span class="symptom-tag">Difficulty swallowing solids</span>
+              <span class="symptom-tag">Feeling of throat constriction</span>
+              <span class="symptom-tag">Cosmetic distress</span>
+              <span class="symptom-tag">Desire to avoid neck scar</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Thyroid Radiofrequency Ablation (RFA). Scarless needle shrinkage in 30 mins.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 6. Varicocele & Male Infertility -->
+          <div class="condition-card" data-id="varicocele" data-category="cat-urology" data-title="Varicocele & Male Infertility" data-desc="varicocele scrotal pain bag of worms low sperm count motility infertility coil embolization" onclick="openDiseaseDetail('varicocele')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Men's Fertility & Urology</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Varicocele & Male Infertility</h3>
+            <p class="condition-desc">
+              Abnormal dilation of scrotal veins raising testicular temperature, causing chronic dragging pain, and impairing sperm count and motility.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Dull aching scrotal pain</span>
+              <span class="symptom-tag">Worse after prolonged standing</span>
+              <span class="symptom-tag">Abnormal semen parameters</span>
+              <span class="symptom-tag">Low sperm count or motility</span>
+              <span class="symptom-tag">Visible 'bag of worms' veins</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Varicocele Embolization. Catheter coil/glue blockage with zero groin incisions.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 7. Deep Vein Thrombosis (DVT) -->
+          <div class="condition-card" data-id="dvt" data-category="cat-vascular" data-title="Deep Vein Thrombosis (DVT)" data-desc="dvt blood clot leg swelling calf pain warmth pulmonary embolism ivc filter thrombolysis" onclick="openDiseaseDetail('dvt')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Vascular Emergency</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Deep Vein Thrombosis (DVT)</h3>
+            <p class="condition-desc">
+              Sudden blood clot formation in deep leg or pelvic veins, carrying high risks of fatal pulmonary embolism if clots travel to the lungs.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden severe leg swelling</span>
+              <span class="symptom-tag">Throbbing calf pain</span>
+              <span class="symptom-tag">Warmth and reddish skin</span>
+              <span class="symptom-tag">Risk of pulmonary embolism</span>
+              <span class="symptom-tag">Engorged superficial veins</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Catheter-Directed Thrombolysis (CDT) & IVC Filter placement for clot safety.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 8. Diabetic Foot & Arterial Blockages -->
+          <div class="condition-card" data-id="diabetic-foot" data-category="cat-vascular" data-title="Diabetic Foot & Arterial Blockages" data-desc="diabetic foot pad arterial blockage leg pain gangrene non-healing ulcer angioplasty stent" onclick="openDiseaseDetail('diabetic-foot')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Vascular Health & PAD</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Diabetic Foot & Arterial Blockages</h3>
+            <p class="condition-desc">
+              Atherosclerotic plaques narrow leg arteries, severely restricting oxygen supply and causing gangrene, night foot pain, and non-healing ulcers.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Calf cramps while walking</span>
+              <span class="symptom-tag">Foot pain keeping you awake</span>
+              <span class="symptom-tag">Cold, pale feet or toes</span>
+              <span class="symptom-tag">Non-healing diabetic ulcers</span>
+              <span class="symptom-tag">Limb amputation threat</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Peripheral Angioplasty & Stenting. Restores blood flow and saves the leg.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 9. Liver Tumors (HCC / Metastases) -->
+          <div class="condition-card" data-id="liver-tumors" data-category="cat-oncology" data-title="Liver Tumors (HCC / Metastases)" data-desc="liver cancer tumor hcc metastasis jaundice weight loss afp tace tare microwave chemoembolization" onclick="openDiseaseDetail('liver-tumors')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Oncology & Liver</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Liver Tumors (HCC & Metastases)</h3>
+            <p class="condition-desc">
+              Primary or secondary malignant growths in the liver that cannot be surgically cut out due to tumor size, position, or underlying cirrhosis.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Unexplained weight loss</span>
+              <span class="symptom-tag">Right upper abdominal ache</span>
+              <span class="symptom-tag">Elevated AFP tumor marker</span>
+              <span class="symptom-tag">Inoperable liver mass on scan</span>
+              <span class="symptom-tag">Chronic cancer fatigue</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              TACE / TARE and Microwave Ablation. Delivers targeted chemo and kills tumor cells.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 10. Brain Aneurysm & Acute Stroke -->
+          <div class="condition-card" data-id="brain-stroke" data-category="cat-neuro" data-title="Brain Aneurysm & Acute Stroke" data-desc="brain aneurysm stroke clot paralysis headache speech coiling flow diverter thrombectomy carotid stent" onclick="openDiseaseDetail('brain-stroke')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Neuro-Intervention</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Brain Aneurysm & Acute Stroke</h3>
+            <p class="condition-desc">
+              Critical ballooning of cerebral vessels risking catastrophic rupture, acute clot stroke causing sudden paralysis, and carotid artery narrowing.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden explosive headache</span>
+              <span class="symptom-tag">Facial drooping / weakness</span>
+              <span class="symptom-tag">Slurred speech / FAST signs</span>
+              <span class="symptom-tag">Carotid neck artery stenosis</span>
+              <span class="symptom-tag">TIA mini-strokes</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Mechanical Thrombectomy, Aneurysm Coiling, Flow Diverters & Carotid Stenting.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 11. Pelvic Congestion Syndrome -->
+          <div class="condition-card" data-id="pelvic-congestion" data-category="cat-women" data-title="Pelvic Congestion Syndrome" data-desc="chronic pelvic pain ovarian veins varicose pelvis dyspareunia painful periods embolization" onclick="openDiseaseDetail('pelvic-congestion')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Women's Health</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Pelvic Congestion Syndrome (PCS)</h3>
+            <p class="condition-desc">
+              Incompetent ovarian and pelvic veins causing blood to pool backward, producing deep pelvic varicosities and chronic, unexplained daily pain.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Chronic pelvic pain >6 months</span>
+              <span class="symptom-tag">Pain worse after standing</span>
+              <span class="symptom-tag">Pain during intercourse</span>
+              <span class="symptom-tag">Heavy, painful periods</span>
+              <span class="symptom-tag">Thigh/perineal varicose veins</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Ovarian Vein Embolization. Catheter coil closure of refluxing pelvic veins in daycare.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+          <!-- 12. Dialysis AV Fistula Failure -->
+          <div class="condition-card" data-id="dialysis-fistula" data-category="cat-vascular" data-title="Dialysis AV Fistula Dysfunction" data-desc="dialysis fistula failure stenosis clot swelling high pressure alarms kidney failure fistuloplasty" onclick="openDiseaseDetail('dialysis-fistula')">
+            <div class="condition-card-header">
+              <span class="condition-cat-badge">Vascular & Dialysis Access</span>
+              <span class="condition-badge-click">Details &#8599;</span>
+            </div>
+            <h3>Dialysis AV Fistula Dysfunction</h3>
+            <p class="condition-desc">
+              Narrowing (stenosis) or blood clots obstructing the patient's arteriovenous dialysis fistula, causing high pressure alarms and arm swelling.
+            </p>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Low blood flow on dialysis</span>
+              <span class="symptom-tag">High venous pressure alarms</span>
+              <span class="symptom-tag">Loss of fistula thrill/hum</span>
+              <span class="symptom-tag">Severe arm or face swelling</span>
+              <span class="symptom-tag">Prolonged needle bleeding</span>
+            </div>
+            <div class="solution-box">
+              <strong>Pinhole IR Solution:</strong>
+              Pinhole Fistuloplasty (Balloon Dilation) & Catheter Declotting to salvage the fistula.
+            </div>
+            <div class="condition-card-action">
+              <span>View Full Disease Breakdown & IR Cure</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE / CONDITION DETAIL MODAL (HIGH CLINICAL DETAIL) -->
+    <div class="proc-detail-modal" id="diseaseDetailModal" onclick="if(event.target===this)closeDiseaseDetail()" aria-modal="true" role="dialog">
+      <div class="proc-detail-card">
+        <div class="proc-detail-header">
+          <div class="proc-detail-header-text">
+            <span class="kicker" id="dModalCategory">CATEGORY</span>
+            <h2 id="dModalTitle">Disease Name</h2>
+            <p id="dModalTagline" style="margin:4px 0 0;font-size:13.5px;color:#cbdad7;"></p>
+          </div>
+          <button class="proc-detail-close" onclick="closeDiseaseDetail()" aria-label="Close disease details modal">&times;</button>
+        </div>
+        
+        <div class="proc-detail-body">
+          <!-- Quick Clinical Badges -->
+          <div class="proc-metrics-row">
+            <div class="proc-metric-box">
+              <span>Prevalence / Risk</span>
+              <strong id="dMetricPrevalence">--</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Primary IR Care</span>
+              <strong id="dMetricTreatment">--</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Clinical Success</span>
+              <strong id="dMetricSuccess">--</strong>
+            </div>
+            <div class="proc-metric-box">
+              <span>Downtime / Recovery</span>
+              <strong id="dMetricRecovery">--</strong>
+            </div>
+          </div>
+
+          <!-- 1. Disease Pathology & Root Cause -->
+          <div class="proc-info-block">
+            <h3>Disease Pathology & What Happens in Your Body</h3>
+            <p id="dModalOverview">Detailed medical explanation...</p>
+          </div>
+
+          <!-- 2. Common & Warning Symptoms -->
+          <div class="proc-info-block">
+            <h3>Common Symptoms & Signs to Watch For</h3>
+            <ul class="proc-bullet-list" id="dModalSymptoms"></ul>
+          </div>
+
+          <!-- 3. Why Avoid Open Surgery -->
+          <div class="proc-info-block" style="background:#fff8f5;border-left:4px solid #e06d53;padding:16px 18px;border-radius:8px;margin-bottom:22px;">
+            <h3 style="color:#b23b20;margin-top:0;">Why Conventional Surgery Is Often Avoided</h3>
+            <p id="dModalSurgery" style="margin:0;color:#5c3830;font-size:13.5px;line-height:1.7;"></p>
+          </div>
+
+          <!-- 4. Pinhole IR Solutions -->
+          <div class="proc-info-block">
+            <h3>Advanced Interventional Radiology (IR) Solutions</h3>
+            <div id="dModalSolutions"></div>
+          </div>
+
+          <!-- 5. Key Advantages & Benefits -->
+          <div class="proc-info-block">
+            <h3>Key Advantages for Patients</h3>
+            <ul class="proc-bullet-list" id="dModalBenefits"></ul>
+          </div>
+        </div>
+
+        <div class="proc-detail-footer">
+          <div>
+            <a href="tel:18002021801" style="font-weight:700;color:var(--teal);font-size:13.5px;text-decoration:none;">&#128222; Toll-Free Helpline: 1800 202 1801</a>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn secondary" onclick="closeDiseaseDetail()">Close</button>
+            <a class="btn secondary" id="dModalProcLink" href="treatments.html" style="text-decoration:none;">View Procedure Details &rarr;</a>
+            <button class="btn" id="dModalBookBtn" onclick="bookDiseaseFromModal()">Book Consultation for this Condition &#8599;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Unsure Which Treatment Fits You?</span>
+        <h2>Bring Your Reports for an Expert Second Opinion</h2>
+        <p>Dr. Rohan will review your diagnostic scans and provide an honest assessment of whether pinhole interventional therapy is your best option.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Schedule Consultation &#8599;</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">&#128222; Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">&#128680; 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>&#128205;</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>&#128340;</span>
+            <div><b>Consultation Hours:</b><br>Mon &ndash; Sat: 10:00 AM &ndash; 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>&copy; 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer &bull; Privacy Policy &bull; Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation &#8599;</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">&times;</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Condition of Concern</label><input type="text" id="procedureInterest" placeholder="e.g. Varicose Veins, Knee Pain"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request &rarr;</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

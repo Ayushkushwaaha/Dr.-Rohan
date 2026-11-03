@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Dr. Rohan, Consultant Interventional Radiologist in Varanasi. Learn about qualifications, training, clinical experience, and patient-first pinhole surgery philosophy.">
+  <title>About Dr. Rohan | Consultant Interventional Radiologist | Varanasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP EMERGENCY & HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>📍 <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">📞 Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>↗</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">Meet Your Specialist</span>
+          <h1>Expert Clinical Care.<br><em>Compassionate</em> Touch.</h1>
+          <p class="hero-copy">
+            Dr. Rohan is a pioneer in bringing state-of-the-art Interventional Radiology to Eastern Uttar Pradesh. With rigorous advanced fellowship training, he specializes in treating complex vascular, gynecological, urological, and oncological diseases through pinhole access without large surgical wounds.
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="openBooking()">Schedule a Consultation ↗</button>
+            <a class="btn secondary" href="contact.html">Clinic Address & Directions</a>
+          </div>
+        </div>
+
+        <div class="doctor-hero-frame">
+          <img class="doctor-portrait" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Dr. Rohan" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80'">
+          <div class="doctor-card-meta">
+            <strong>Dr. Rohan, MD, FVIR</strong>
+            <small>VASCULAR & INTERVENTIONAL RADIOLOGIST</small>
+            <p style="font-size:11.5px;color:#cbdad7;margin-top:4px;">Fellowship-Trained Specialist in Endovascular Laser, UFE, Prostate PAE & Interventional Oncology.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINICAL PHILOSOPHY -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Core Principles</span>
+          <h2>The Four Pillars of Our Clinical Practice</h2>
+          <p>Every recommendation Dr. Rohan makes is designed around minimizing physical trauma, preserving your natural anatomy, and accelerating recovery.</p>
+        </div>
+
+        <div class="journey-grid">
+          <div class="journey-step">
+            <span class="step-number">PILLAR 01</span>
+            <h3>Organ Preservation</h3>
+            <p>Why undergo a hysterectomy for fibroids or prostatectomy for BPH when the organ can be saved? We prioritize therapies that cure symptoms while leaving your anatomy intact.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">PILLAR 02</span>
+            <h3>Pinhole Precision</h3>
+            <p>Using real-time live fluoroscopy, high-resolution ultrasound, and 3D rotational imaging, instruments are guided to the millimeter with zero incisions or surgical scarring.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">PILLAR 03</span>
+            <h3>Daycare Convenience</h3>
+            <p>Most procedures take 30–60 minutes under gentle local anesthesia. Patients walk within hours and return home the very same day, avoiding lengthy hospital stays.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">PILLAR 04</span>
+            <h3>Informed Empathy</h3>
+            <p>We take time to review your scans together, explain benefits versus alternatives, and ensure you and your family are fully confident before taking any step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKGROUND & QUALIFICATIONS -->
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Credentials & Experience</span>
+          <h2>Medical Background & Specialist Training</h2>
+          <p>Trained at premier national academic centres with exhaustive clinical experience across vascular, non-vascular, and emergency interventional radiology.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div style="background:#fff;padding:28px;border-radius:8px;border:1px solid var(--line);">
+            <h3 style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:14px;">Academic Qualifications</h3>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;color:var(--muted);font-size:14px;">
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Postgraduate Degree (MD / DNB) in Radio-Diagnosis</strong>
+                  Excellence in advanced cross-sectional imaging, MRI, CT, and Doppler ultrasonography.
+                </div>
+              </li>
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Advanced Fellowship in Interventional Radiology (FVIR)</strong>
+                  Intensive subspecialty fellowship focused on catheter-directed arterial, venous, and oncology interventions.
+                </div>
+              </li>
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Professional Memberships</strong>
+                  Active member of the Indian Society of Vascular and Interventional Radiology (ISVIR) and Cardiovascular and Interventional Radiological Society of Europe (CIRSE).
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background:#fff;padding:28px;border-radius:8px;border:1px solid var(--line);">
+            <h3 style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:14px;">Clinical Areas of Excellence</h3>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;color:var(--muted);font-size:14px;">
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Endovenous Vein Therapies (EVLA, RFA, VenaSeal Glue)</strong>
+                  Over hundreds of successful, scarless varicose vein ablations performed as outpatient procedures.
+                </div>
+              </li>
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Embolization Therapies (UFE, PAE, GAE, Varicocele)</strong>
+                  Uterus preservation for fibroids and incision-free prostate relief with zero sexual side-effects.
+                </div>
+              </li>
+              <li style="display:flex;gap:10px;">
+                <span style="color:var(--teal);font-weight:bold;">✓</span>
+                <div>
+                  <strong style="color:var(--ink);display:block;">Onco-Interventions & Vascular Access</strong>
+                  TACE/TARE for liver tumors, microwave ablation, and placement of long-term Chemoports, PICC lines, and Permacaths.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Schedule a Personal Consultation</span>
+        <h2>Discuss Your Case Directly with Dr. Rohan</h2>
+        <p>Bring your existing scans or reports for a thorough, second-opinion discussion regarding minimally invasive options.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Book Your Slot ↗</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div><b>Consultation Hours:</b><br>Mon – Sat: 10:00 AM – 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer • Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Procedure of Interest</label><input type="text" placeholder="e.g. Varicose Veins, UFE, Prostate"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

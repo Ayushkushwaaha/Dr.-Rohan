@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clinical Categories & Interventional Radiology Specialties at Dr. Rohan's Clinic in Varanasi. Peripheral Vascular, Obstetrics & Gynecology, Urology, Musculoskeletal, GI & Liver, Thoracic, and Neuro Interventions.">
+  <title>Clinical Categories & Specialties | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP EMERGENCY & HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-left">
+        <span>📍 <strong>Sigra, Varanasi</strong> (Convenient to Cantt & Lanka)</span>
+        <a href="tel:18002021801">📞 OPD Helpline: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-right">
+        <span class="topline-badge">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Trauma & Acute Bleed Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <!-- Desktop Navlinks -->
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown active">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item active">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation ↗</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown open">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()" class="active">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero" style="padding:55px 0 45px;">
+      <div class="container" style="text-align:center;max-width:860px;">
+        <span class="kicker"><span class="pulse-dot"></span>Clinical Architecture • IR Clinic India Standards</span>
+        <h1>Specialized Interventional Categories</h1>
+        <p class="hero-copy" style="margin:0 auto 20px;">
+          Interventional Radiology covers 9 comprehensive clinical disciplines. Discover how image-guided pinhole techniques offer surgical alternatives across vascular, gynecological, urological, oncological, and neurological conditions.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="category-filter-bar">
+          <button class="category-filter-tab active" onclick="filterCategory('all', this)">
+            All Categories <span class="tab-count">9</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('vascular', this)">
+            Peripheral Vascular <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('obgyn', this)">
+            Obstetrics & Gynecology <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('urology', this)">
+            Urological <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('msk', this)">
+            Musculoskeletal & Joint <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('gi', this)">
+            Gastrointestinal & Liver <span class="tab-count">5</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('headneck', this)">
+            Head & Neck <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('thoracic', this)">
+            Thoracic <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('neuro', this)">
+            Neuro <span class="tab-count">4</span>
+          </button>
+          <button class="category-filter-tab" onclick="filterCategory('basic', this)">
+            Basic & Daycare <span class="tab-count">4</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY CARDS GRID (ALL 9 IR CLINIC SPECIALTIES) -->
+    <section class="section white">
+      <div class="container">
+        <div class="category-cards-grid">
+          
+          <!-- 1. Peripheral Vascular -->
+          <article class="category-specialty-card" data-cat="vascular">
+            <div class="category-card-header">
+              <div class="category-card-icon">🩸</div>
+              <div>
+                <small>SPECIALTY 01</small>
+                <h3>Peripheral Vascular</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Advanced catheter and laser solutions for venous and arterial disorders of the extremities. Minimizes pain, prevents amputations, and restores normal circulation.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Varicose Veins EVLA (Endovenous Laser)</li>
+              <li>VenaSeal Medical Glue & Radiofrequency (RFA)</li>
+              <li>Deep Vein Thrombosis (DVT) Catheter Thrombolysis</li>
+              <li>Diabetic Foot & Critical Limb Ischemia Angioplasty</li>
+              <li>Peripheral Artery Disease (PAD) Stenting & Atherectomy</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#varicose">Explore Vascular Care →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Peripheral Vascular')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 2. Obstetrics & Gynecology -->
+          <article class="category-specialty-card" data-cat="obgyn">
+            <div class="category-card-header">
+              <div class="category-card-icon">🌸</div>
+              <div>
+                <small>SPECIALTY 02</small>
+                <h3>Obstetrics & Gynecology</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Organ-preserving, uterus-saving pinhole therapies for benign gynecological conditions. Proven non-surgical alternatives to hysterectomy.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Uterine Fibroid Embolization (UFE / UAE)</li>
+              <li>Adenomyosis Embolization</li>
+              <li>Pelvic Congestion Syndrome (Ovarian Vein Embolization)</li>
+              <li>Post-Partum Hemorrhage (PPH Emergency Embolization)</li>
+              <li>Fallopian Tube Recanalization for Infertility</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#fibroids">Explore Women's Health →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Uterine Fibroids (UFE)')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 3. Urological -->
+          <article class="category-specialty-card" data-cat="urology">
+            <div class="category-card-header">
+              <div class="category-card-icon">💧</div>
+              <div>
+                <small>SPECIALTY 03</small>
+                <h3>Urological Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Endovascular and percutaneous treatments for prostate enlargement, scrotal varicoceles, and renal urinary tract obstructions without urethral surgery.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Prostate Artery Embolization (PAE for BPH)</li>
+              <li>Varicocele Embolization (Fertility & Pain Relief)</li>
+              <li>Renal Angiomyolipoma (AML) Embolization</li>
+              <li>Percutaneous Nephrostomy (PCN) & Stenting</li>
+              <li>Hemodialysis Tunnelled Permacath Placement</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#prostate">Explore Urology IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Prostate PAE / Urology')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 4. Musculoskeletal & Joint Pain -->
+          <article class="category-specialty-card" data-cat="msk">
+            <div class="category-card-header">
+              <div class="category-card-icon">🦴</div>
+              <div>
+                <small>SPECIALTY 04</small>
+                <h3>Musculoskeletal & Joints</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Non-surgical embolization targeting abnormal hypervascularity and chronic inflammatory pain nerves in joints, spine, and bones.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Genicular Artery Embolization (GAE) for Knee Arthritis</li>
+              <li>Adhesive Capsulitis (Frozen Shoulder) Embolization</li>
+              <li>Vertebroplasty / Kyphoplasty for Spine Fractures</li>
+              <li>Osteoid Osteoma Radiofrequency Ablation (RFA)</li>
+              <li>Image-Guided Facet & Joint Pain Injections</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#knee">Explore Joint Pain IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Knee Pain (GAE)')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 5. Gastrointestinal & Hepatobiliary -->
+          <article class="category-specialty-card" data-cat="gi">
+            <div class="category-card-header">
+              <div class="category-card-icon">🌿</div>
+              <div>
+                <small>SPECIALTY 05</small>
+                <h3>Gastrointestinal & Liver</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Minimally invasive interventional oncology and life-saving bleeding control for liver, biliary system, stomach, and bowel disorders.
+            </p>
+            <ul class="category-procedures-list">
+              <li>TACE (Transarterial Chemoembolization) for Liver Tumors</li>
+              <li>TARE (Yttrium-90 Radioembolization)</li>
+              <li>Microwave / RFA Liver Tumor Ablation</li>
+              <li>Acute GI Bleed Embolization (Ulcers / Diverticula)</li>
+              <li>PTBD (Percutaneous Biliary Drainage) & Biliary Stents</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#oncology">Explore GI & Liver IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Liver TACE / GI')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 6. Head & Neck -->
+          <article class="category-specialty-card" data-cat="headneck">
+            <div class="category-card-header">
+              <div class="category-card-icon">👤</div>
+              <div>
+                <small>SPECIALTY 06</small>
+                <h3>Head & Neck</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Thermal ablation and endovascular embolization for thyroid lumps, severe nasal hemorrhages, and vascular malformations without neck incisions.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Thyroid Nodule Radiofrequency Ablation (RFA)</li>
+              <li>Thyroid Microwave Ablation (Zero Neck Scar)</li>
+              <li>Carotid Artery Stenting (CAS for Stroke Prevention)</li>
+              <li>Severe Epistaxis (Refractory Nosebleed) Embolization</li>
+              <li>Facial & Neck Vascular Malformation Sclerotherapy</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#thyroid">Explore Head & Neck →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Thyroid RFA')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 7. Thoracic & Pulmonary -->
+          <article class="category-specialty-card" data-cat="thoracic">
+            <div class="category-card-header">
+              <div class="category-card-icon">🫁</div>
+              <div>
+                <small>SPECIALTY 07</small>
+                <h3>Thoracic (Chest & Lungs)</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Image-guided procedures for chronic coughing of blood, thoracic fluid management, lung lesions, and long-term chemotherapy access lines.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Bronchial Artery Embolization (Hemoptysis Bleed Control)</li>
+              <li>Chemoport Insertion for Long-Term Chemotherapy</li>
+              <li>PICC Line Insertion (Ultrasound-Guided)</li>
+              <li>CT-Guided Precision Lung Biopsy</li>
+              <li>Pleural Effusion Drainage & Pigtail Insertion</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#dialysis">Explore Thoracic IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Thoracic & Chemoport')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 8. Neuro Interventions -->
+          <article class="category-specialty-card" data-cat="neuro">
+            <div class="category-card-header">
+              <div class="category-card-icon">🧠</div>
+              <div>
+                <small>SPECIALTY 08</small>
+                <h3>Neuro Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Endovascular microcatheter treatments for brain aneurysms, acute ischemic stroke clots, and complex intracranial vascular diseases.
+            </p>
+            <ul class="category-procedures-list">
+              <li>Emergency Mechanical Thrombectomy for Acute Stroke</li>
+              <li>Brain Aneurysm Coiling & Flow Diverter Stenting</li>
+              <li>Brain Arteriovenous Malformation (AVM) Embolization</li>
+              <li>Carotid Cavernous Fistula (CCF) Embolization</li>
+              <li>Diagnostic Cerebral Digital Subtraction Angiography (DSA)</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="technology.html">Explore Neuro Care →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Neuro Intervention')">Consult ↗</button>
+            </div>
+          </article>
+
+          <!-- 9. Basic & Daycare Interventions -->
+          <article class="category-specialty-card" data-cat="basic">
+            <div class="category-card-header">
+              <div class="category-card-icon">🔬</div>
+              <div>
+                <small>SPECIALTY 09</small>
+                <h3>Basic & Daycare Interventions</h3>
+              </div>
+            </div>
+            <p class="category-card-desc">
+              Essential outpatient diagnostic biopsies and therapeutic drainage procedures performed under ultrasound or CT guidance in 20–30 minutes.
+            </p>
+            <ul class="category-procedures-list">
+              <li>USG & CT-Guided Core Biopsy (Liver, Lung, Kidney, Nodes)</li>
+              <li>Fine Needle Aspiration Cytology (FNAC)</li>
+              <li>Pigtail Catheter Insertion for Abscess Drainage</li>
+              <li>Therapeutic Ascitic & Pleural Fluid Paracentesis</li>
+              <li>AV Fistula Salvage Balloon Angioplasty</li>
+            </ul>
+            <div class="category-card-footer">
+              <a class="category-action-link" href="treatments.html#dialysis">Explore Daycare IR →</a>
+              <button class="btn secondary" style="padding:6px 12px;font-size:11.5px;" onclick="openBooking('Daycare Biopsy / Drainage')">Consult ↗</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Consultation & Second Opinions</span>
+        <h2>Not Sure Which Specialty Fits Your Case?</h2>
+        <p>Bring your existing scans and prescription reports to Dr. Rohan at our Sigra, Varanasi clinic. We will guide you to the exact minimally invasive solution.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801 (Toll Free)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>
+            Compassionate, evidence-based pinhole care. Bringing premier international standards of image-guided vascular and organ treatments to Varanasi, Purvanchal, and Eastern India.
+          </p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency Line: 1800 202 1802</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>CLINIC PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="categories.html">Clinical Categories</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Cath Lab & Tech</a>
+          <a href="contact.html">Contact & Directions</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>SPECIALTY CATEGORIES</h4>
+          <a href="categories.html">Peripheral Vascular</a>
+          <a href="categories.html">Obstetrics & Gynecology</a>
+          <a href="categories.html">Urological (Prostate PAE)</a>
+          <a href="categories.html">Musculoskeletal (Knee GAE)</a>
+          <a href="categories.html">GI & Liver Oncology (TACE)</a>
+          <a href="categories.html">Head & Neck (Thyroid RFA)</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>VARANASI CLINIC</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div>
+              <b>Dr. Rohan IR Clinic</b><br>
+              Sigra / Mahmoorganj Road, Varanasi, UP 221010
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div>
+              <b>OPD Hours:</b><br>
+              Mon – Sat: 10:00 AM – 7:00 PM<br>
+              Emergency IR: 24/7 On-Call
+            </div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:8px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic, Varanasi. All rights reserved.</span>
+        <span>Medical Disclaimer • Patient Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM BAR -->
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book Appointment ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Request</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Share your details below. Our Varanasi patient care desk will call you back within 2 hours to confirm your consultation time.
+      </p>
+
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field">
+            <label>Patient Full Name *</label>
+            <input type="text" required placeholder="e.g. Ramesh Kumar">
+          </div>
+          <div class="field">
+            <label>Mobile Number *</label>
+            <input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="e.g. 9876543210">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>City / Town</label>
+            <input type="text" placeholder="e.g. Varanasi, Mirzapur, Patna">
+          </div>
+          <div class="field">
+            <label>Category / Procedure</label>
+            <select id="procedureInterest">
+              <option value="">Select Category</option>
+              <option value="Peripheral Vascular">Peripheral Vascular (Varicose Veins/DVT)</option>
+              <option value="Obstetrics & Gynecology">Obstetrics & Gynecology (Uterine Fibroids)</option>
+              <option value="Urological">Urological (Prostate PAE / Varicocele)</option>
+              <option value="Musculoskeletal">Musculoskeletal (Knee Arthritis GAE)</option>
+              <option value="Gastrointestinal & Liver">Gastrointestinal & Liver (TACE/Ablation)</option>
+              <option value="Head & Neck">Head & Neck (Thyroid RFA)</option>
+              <option value="Thoracic">Thoracic (Chemoport / Biopsy)</option>
+              <option value="Neuro">Neuro (Aneurysm / Stroke)</option>
+              <option value="Basic Daycare">Basic Daycare (Biopsy / Drainage)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Preferred Visit Date</label>
+            <input type="date" id="preferredDate">
+          </div>
+          <div class="field">
+            <label>Preferred Time Slot</label>
+            <select>
+              <option>Morning (10:00 AM - 1:00 PM)</option>
+              <option>Afternoon (1:00 PM - 4:00 PM)</option>
+              <option>Evening (4:00 PM - 7:00 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Brief Medical Concern or Scans Done (Optional)</label>
+          <textarea rows="3" placeholder="Describe symptoms, duration, or any ultrasound / MRI done..."></textarea>
+        </div>
+
+        <label style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <input type="checkbox" required style="width:auto;"> I consent to be contacted regarding this medical appointment.
+        </label>
+
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          Our Varanasi clinic coordinator will call you shortly on your provided mobile number. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

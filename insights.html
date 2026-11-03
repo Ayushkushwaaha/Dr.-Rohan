@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patient Education Guides & FAQs on Interventional Radiology in Varanasi by Dr. Rohan. What to bring, how to prepare, Mediclaim insurance coverage, and recovery expectations.">
+  <title>Patient Guides & Resources | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .article-full-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      box-shadow: var(--shadow-sm);
+    }
+    .article-full-img {
+      height: 100%;
+      min-height: 240px;
+      background: var(--teal-subtle);
+    }
+    .article-full-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-full-body {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .checklist-box {
+      background: var(--teal-light);
+      border: 1px solid #c0ded8;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 18px;
+    }
+    .checklist-box ol {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    @media (max-width: 800px) {
+      .article-full-card { grid-template-columns: 1fr; }
+      .article-full-img { height: 200px; min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>📍 <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">📞 Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html" class="active">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>↗</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero" style="padding:55px 0 45px;">
+      <div class="container" style="text-align:center;max-width:850px;">
+        <span class="kicker">Knowledge Empowers Healing</span>
+        <h1>Patient Guides & Clinical Insights</h1>
+        <p class="hero-copy" style="margin:0 auto;">
+          Clear, evidence-backed explanations to help you and your family make educated, confident decisions about minimally invasive care.
+        </p>
+      </div>
+    </section>
+
+    <!-- GUIDES LIST -->
+    <section class="section white">
+      <div class="container" style="max-width:960px;">
+        <!-- Guide 1: Understanding IR -->
+        <article class="article-full-card">
+          <div class="article-full-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="What is Interventional Radiology" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="article-full-body">
+            <span class="treatment-category">CLINICAL EXPLAINER</span>
+            <h2 style="font-family:var(--serif);font-size:26px;margin:8px 0;">What is Interventional Radiology (IR)?</h2>
+            <p style="color:var(--muted);font-size:14px;line-height:1.8;">
+              Interventional Radiology is a medical specialty that uses medical imaging guidance (such as Fluoroscopy X-ray, Ultrasound, and CT) to perform targeted minimally invasive procedures. Rather than opening the body with a large scalpel incision, an Interventional Radiologist navigates micro-instruments through a 2mm puncture directly to the diseased site.
+            </p>
+            <div style="margin-top:14px;">
+              <span class="condition-tag">No Big Cuts</span>
+              <span class="condition-tag">Zero Stitches</span>
+              <span class="condition-tag">Minimal Pain</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Guide 2: Preparing for Visit -->
+        <article class="article-full-card">
+          <div class="article-full-img">
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Preparing for your consultation" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="article-full-body">
+            <span class="treatment-category">PATIENT CHECKLIST</span>
+            <h2 style="font-family:var(--serif);font-size:26px;margin:8px 0;">What to Bring to Your First Consultation</h2>
+            <p style="color:var(--muted);font-size:14px;line-height:1.8;">
+              To make the most of your consultation with Dr. Rohan in Varanasi, please organize the following medical records:
+            </p>
+            <div class="checklist-box">
+              <ol>
+                <li><strong>Original Radiology Scans:</strong> Film sheets or DICOM CDs of Ultrasounds, Doppler studies, CT scans, or MRIs.</li>
+                <li><strong>Recent Blood Reports:</strong> CBC, Kidney Function Test (Creatinine/BUN), Coagulation profile (PT/INR).</li>
+                <li><strong>Current Prescription List:</strong> All daily medications, especially blood thinners (Aspirin, Clopidogrel, Warfarin).</li>
+                <li><strong>Doctor Referral Letters:</strong> Prior surgical notes or physician discharge summaries if applicable.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <!-- Guide 3: Insurance & Cashless TPA -->
+        <article class="article-full-card">
+          <div class="article-full-img">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80" alt="Insurance and Mediclaim" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="article-full-body">
+            <span class="treatment-category">FINANCIAL & TPA</span>
+            <h2 style="font-family:var(--serif);font-size:26px;margin:8px 0;">Health Insurance & Cashless Mediclaim</h2>
+            <p style="color:var(--muted);font-size:14px;line-height:1.8;">
+              Under modern insurance guidelines by IRDAI, advanced daycare interventional radiology procedures that do not require 24-hour hospitalization are fully eligible for Mediclaim and Cashless TPA approvals.
+            </p>
+            <ul class="treatment-feature-list" style="margin:14px 0 0;">
+              <li>Varicose Vein EVLA / Laser Ablation is widely covered under vascular surgery daycare clauses.</li>
+              <li>Uterine Fibroid Embolization (UFE) is eligible as an approved alternative to hysterectomy.</li>
+              <li>Oncology procedures (TACE, Chemoports) and Dialysis catheters are covered under critical illness and hospitalization benefits.</li>
+              <li>Our billing desk helps coordinate pre-authorization documents with all major TPAs.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE FAQS -->
+    <section class="section sand">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Everything You Need to Know</span>
+          <h2>In-Depth Patient FAQs</h2>
+          <p>Common questions answered directly by Dr. Rohan and our interventional care team.</p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Is an Interventional Radiology procedure painful?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              Most patients feel only a slight pinch from the initial local numbing injection (similar to a dental injection). Once the area is numb, passing the microcatheter through the vascular system is virtually painless because there are no pain-sensing nerves inside the lumen of blood vessels.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Will I have a scar after treatment?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              No. Because access is achieved using a fine needle (usually 1.5 to 2 mm in diameter), no surgical skin cut is made and no stitches are used. A small medical band-aid is applied over the puncture site, which heals within 48 hours without any noticeable scar.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How soon can I return to work and driving?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              For varicose veins and daycare access lines, patients walk out immediately and can resume desk work the following morning. For uterine fibroids (UFE) and prostate (PAE), light activity is resumed in 24 hours, and patients are back to full normal work within 3 to 5 days.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What if my primary doctor hasn't heard of PAE or GAE?
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              Interventional Radiology is one of the fastest evolving branches in modern medicine. Dr. Rohan frequently collaborates with general physicians, gynecologists, urologists, and orthopedic surgeons to provide multidisciplinary second opinions and coordinate patient care.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Ready to Consult?</span>
+        <h2>Schedule Your One-on-One Session</h2>
+        <p>Take charge of your health with clear, expert guidance from Dr. Rohan in Varanasi.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Request Consultation ↗</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div><b>Consultation Hours:</b><br>Mon – Sat: 10:00 AM – 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer • Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Procedure of Interest</label><input type="text" placeholder="e.g. Varicose Veins, UFE, Prostate"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

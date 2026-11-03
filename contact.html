@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Dr. Rohan Interventional Radiology Clinic in Varanasi. Book an appointment, find clinic directions, consultation hours, and 24/7 emergency helpline numbers.">
+  <title>Contact & Clinic Locations | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: flex-start;
+    }
+    .contact-info-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-detail-block {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-form-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .city-badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px) {
+      .contact-layout-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>📍 <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">📞 Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>↗</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero" style="padding:55px 0 45px;">
+      <div class="container" style="text-align:center;max-width:850px;">
+        <span class="kicker">Get in Touch</span>
+        <h1>We Are Here to Help</h1>
+        <p class="hero-copy" style="margin:0 auto;">
+          Whether you need to confirm an appointment, verify insurance cashless eligibility, or discuss an urgent medical condition, our care coordinators are ready to assist you.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT GRID & FORM -->
+    <section class="section white">
+      <div class="container contact-layout-grid">
+        <!-- Contact Details Column -->
+        <div>
+          <div class="contact-info-card">
+            <span class="kicker">Direct Contact Numbers</span>
+            <h2 style="font-family:var(--serif);font-size:26px;margin:8px 0 20px;">Patient Support & Helpline</h2>
+
+            <div class="contact-detail-block">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong style="font-size:16px;color:var(--ink);display:block;">Appointment Helpline (Toll-Free)</strong>
+                <a href="tel:18002021801" style="font-size:20px;font-weight:700;color:var(--teal);display:block;margin:2px 0;">1800 202 1801</a>
+                <span style="font-size:12px;color:var(--muted);">Monday to Saturday: 9:00 AM – 8:00 PM</span>
+              </div>
+            </div>
+
+            <div class="contact-detail-block">
+              <div class="contact-icon" style="background:#ffebe8;color:#c93b2b;">🚨</div>
+              <div>
+                <strong style="font-size:16px;color:var(--ink);display:block;">24/7 Emergency IR Line</strong>
+                <a href="tel:18002021802" style="font-size:20px;font-weight:700;color:#c93b2b;display:block;margin:2px 0;">1800 202 1802</a>
+                <span style="font-size:12px;color:var(--muted);">For acute bleeds, DVT, hemoptysis, and trauma referrals</span>
+              </div>
+            </div>
+
+            <div class="contact-detail-block">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong style="font-size:16px;color:var(--ink);display:block;">Varanasi Clinic Address</strong>
+                <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:4px 0;">
+                  Dr. Rohan Interventional Radiology Center<br>
+                  Sigra / Mahmoorganj Road, Varanasi, Uttar Pradesh 221010
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-detail-block" style="margin-bottom:0;">
+              <div class="contact-icon">🕒</div>
+              <div>
+                <strong style="font-size:16px;color:var(--ink);display:block;">Clinic Timings</strong>
+                <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:4px 0;">
+                  <strong>Outpatient OPD:</strong> Monday – Saturday: 10:00 AM – 7:00 PM<br>
+                  <strong>Cath Lab Procedures:</strong> By appointment & emergency
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regional Patient Welcome -->
+          <div class="contact-info-card">
+            <span class="kicker">Regional Patient Care</span>
+            <h3 style="font-family:var(--serif);font-size:22px;margin:8px 0 10px;">Serving Eastern UP & Bihar</h3>
+            <p style="color:var(--muted);font-size:13.5px;line-height:1.7;">
+              Patients from nearby cities can easily access tertiary-care interventional radiology in Varanasi without travelling to metros like Delhi or Mumbai:
+            </p>
+            <div class="city-badge-grid">
+              <span class="condition-tag">Patna</span>
+              <span class="condition-tag">Mirzapur</span>
+              <span class="condition-tag">Prayagraj / Allahabad</span>
+              <span class="condition-tag">Gorakhpur</span>
+              <span class="condition-tag">Jaunpur</span>
+              <span class="condition-tag">Ghazipur</span>
+              <span class="condition-tag">Ballia</span>
+              <span class="condition-tag">Sasaram</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- In-Page Booking Form -->
+        <div>
+          <div class="contact-form-card">
+            <span class="kicker">Book Your Consultation</span>
+            <h2 style="font-family:var(--serif);font-size:28px;margin:8px 0 12px;">Request an Appointment</h2>
+            <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:24px;">
+              Please complete the form below. Our clinic coordinator will get in touch to confirm your appointment time and provide preparation instructions.
+            </p>
+
+            <form id="contactPageForm" onsubmit="event.preventDefault(); document.getElementById('pageConfirmation').style.display='block';">
+              <div class="form-grid">
+                <div class="field">
+                  <label>Patient Full Name *</label>
+                  <input type="text" required placeholder="Full name">
+                </div>
+                <div class="field">
+                  <label>Mobile Number *</label>
+                  <input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="10-digit number">
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Your City / Hometown</label>
+                  <input type="text" placeholder="e.g. Varanasi, Mirzapur">
+                </div>
+                <div class="field">
+                  <label>Procedure / Condition</label>
+                  <select required>
+                    <option value="">Choose Condition</option>
+                    <option>Varicose Veins (EVLA / Glue)</option>
+                    <option>Uterine Fibroids (UFE)</option>
+                    <option>Enlarged Prostate (PAE)</option>
+                    <option>Knee Arthritis Pain (GAE)</option>
+                    <option>Thyroid Nodule Ablation (RFA)</option>
+                    <option>Varicocele Embolization</option>
+                    <option>Dialysis Fistula / Permacath</option>
+                    <option>Interventional Oncology (TACE/Ablation)</option>
+                    <option>General Second Opinion</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Preferred Visit Date</label>
+                  <input type="date">
+                </div>
+                <div class="field">
+                  <label>Preferred Time Slot</label>
+                  <select>
+                    <option>Morning (10:00 AM - 1:00 PM)</option>
+                    <option>Afternoon (1:00 PM - 4:00 PM)</option>
+                    <option>Evening (4:00 PM - 7:00 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Tell Us About Your Symptoms or Scans (Optional)</label>
+                <textarea rows="3" placeholder="Duration of pain, existing ultrasound or MRI findings..."></textarea>
+              </div>
+
+              <label style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+                <input type="checkbox" required style="width:auto;"> I agree to be contacted by Dr. Rohan's clinic coordinator.
+              </label>
+
+              <button type="submit" class="btn" style="width:100%;">Submit Appointment Request →</button>
+
+              <div class="form-confirmation" id="pageConfirmation" style="display:none;margin-top:16px;">
+                <strong>Thank you! Your consultation request has been received.</strong><br>
+                Our Varanasi desk will contact you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div><b>Consultation Hours:</b><br>Mon – Sat: 10:00 AM – 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer • Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Procedure of Interest</label><input type="text" placeholder="e.g. Varicose Veins, UFE, Prostate"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced Imaging & Cath Lab Technology at Dr. Rohan Interventional Radiology Clinic, Varanasi. Digital Subtraction Angiography (DSA), Ultrasound Doppler, CT Guidance, Microwave Ablation, and VenaSeal.">
+  <title>Advanced Technology & Cath Lab | Dr. Rohan Interventional Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tech-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .tech-item-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+    .tech-item-img {
+      height: 240px;
+      background: var(--teal-subtle);
+    }
+    .tech-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tech-item-content {
+      padding: 26px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tech-item-content h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      margin: 8px 0 12px;
+      color: var(--ink);
+    }
+    .tech-item-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 768px) {
+      .tech-showcase-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HELPLINE BAR -->
+  <div class="topline">
+    <div class="container">
+      <div class="topline-contact">
+        <span>📍 <strong>Varanasi Centre:</strong> Interventional Radiology Clinic, Varanasi, UP</span>
+        <a href="tel:18002021801">📞 Appointments: <strong>1800 202 1801</strong> (Toll Free)</a>
+      </div>
+      <div class="topline-contact">
+        <span class="badge-emergency">24/7 IR EMERGENCY</span>
+        <a href="tel:18002021802">🚨 Emergency Line: <strong>1800 202 1802</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-emblem">R</span>
+        <div class="logo-text">
+          <strong>Dr. Rohan</strong>
+          <small>Interventional Radiology Clinic</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html" class="nav-dropdown-trigger">
+            Treatments <span class="dropdown-chevron">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="categories.html" class="dropdown-item">Categories</a>
+            <a href="treatments.html" class="dropdown-item">Procedures</a>
+            <a href="conditions.html" class="dropdown-item">Diseases</a>
+            <a href="conditions.html#symptoms" class="dropdown-item">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" class="active">Cath Lab & Tech</a>
+        <a href="insights.html">Patient Guides</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" onclick="openBooking()">Book Consultation <span>↗</span></button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Dr. Rohan</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-btn" type="button" onclick="toggleMobileDropdown(this)">
+            <span>Treatments</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="categories.html" onclick="toggleMenu()">Categories</a>
+            <a href="treatments.html" onclick="toggleMenu()">Procedures</a>
+            <a href="conditions.html" onclick="toggleMenu()">Diseases</a>
+            <a href="conditions.html#symptoms" onclick="toggleMenu()">Symptoms</a>
+          </div>
+        </div>
+        <a href="technology.html" onclick="toggleMenu()">Cath Lab & Tech</a>
+        <a href="insights.html" onclick="toggleMenu()">Patient Guides</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <button class="btn" onclick="toggleMenu(); openBooking();">Book a Consultation ↗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero" style="padding:55px 0 45px;">
+      <div class="container" style="text-align:center;max-width:850px;">
+        <span class="kicker"><span class="pulse-dot"></span>Cath Lab Facility • Sigra, Varanasi</span>
+        <h1>Cath Lab & Advanced Technology Suite</h1>
+        <p class="hero-copy" style="margin:0 auto;">
+          Our specialized Daycare Cath Lab in Varanasi features Digital Subtraction Angiography (DSA), ultra-low dose pulsed fluoroscopy, and real-time color Doppler ultrasound for sub-millimeter catheter navigation with zero surgical incisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- TECH SHOWCASE GRID -->
+    <section class="section white" id="cathlab">
+      <div class="container">
+        <div class="tech-showcase-grid">
+          <!-- 1. Cath Lab DSA -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Cath Lab Angiography" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="treatment-category">VASCULAR CATH LAB</span>
+              <h3>Digital Subtraction Angiography (DSA)</h3>
+              <p>
+                DSA digitally "subtracts" bones and surrounding soft tissues from X-ray images, providing an unobstructed view of only blood vessels. This allows Dr. Rohan to navigate microcatheters into arteries as narrow as 1 millimeter with extraordinary precision.
+              </p>
+              <div class="solution-box">
+                <strong>Used in:</strong> Uterine Fibroid Embolization (UFE), Prostate (PAE), Knee (GAE), TACE, and Angioplasty.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. High Resolution Ultrasound & Doppler -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="High Resolution Ultrasound Doppler" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="treatment-category">REAL-TIME MAPPING</span>
+              <h3>High-Resolution Ultrasound & Color Doppler</h3>
+              <p>
+                Provides zero-radiation, live-action visualization of blood flow, tissue layers, and vein valves. Guides every pinhole puncture directly into veins without "blind" stabbing, ensuring 100% first-pass accuracy and patient comfort.
+              </p>
+              <div class="solution-box">
+                <strong>Used in:</strong> Varicose vein EVLA, Thyroid RFA, Chemoport placement, and FNAC Biopsy.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CT Guided Interventions -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=800&q=80" alt="CT Guidance Scanner" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="treatment-category">CROSS-SECTIONAL PRECISION</span>
+              <h3>CT-Guided Stereotactic Navigation</h3>
+              <p>
+                Multi-detector CT guidance creates 3D cross-sectional slices of deep internal organs (such as lungs, liver, and spine). Enables millimeter-exact needle navigation deep inside the body while safely avoiding vital arteries and nerves.
+              </p>
+              <div class="solution-box">
+                <strong>Used in:</strong> Deep tumor microwave ablation, lung nodule biopsy, and drainage of complex abdominal abscesses.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Thermal & Microwave Ablation Generators -->
+          <div class="tech-item-card">
+            <div class="tech-item-img">
+              <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Thermal Ablation Generator" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="tech-item-content">
+              <span class="treatment-category">THERMAL DESTRUCTION</span>
+              <h3>Radiofrequency & Microwave Ablation (RFA/MWA)</h3>
+              <p>
+                State-of-the-art generators deliver carefully calibrated electromagnetic energy through fine needle electrodes. The thermal zone coagulates diseased cells (tumors or enlarged nodules) within minutes, sparing adjacent healthy tissue.
+              </p>
+              <div class="solution-box">
+                <strong>Used in:</strong> Thyroid nodule shrinkage, liver cancer ablation, and varicose vein obliteration.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAFETY & RADIATION STANDARDS -->
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Patient Safety Standards</span>
+          <h2>Ultra-Low Dose Radiation & Strict Infection Control</h2>
+          <p>We strictly adhere to the ALARA (As Low As Reasonably Achievable) radiation protocol, using digital dose reduction filters and pulsed fluoroscopy to ensure maximum safety.</p>
+        </div>
+
+        <div class="journey-grid">
+          <div class="journey-step">
+            <span class="step-number">SAFETY 01</span>
+            <h3>Pulsed Fluoroscopy</h3>
+            <p>Reduces cumulative X-ray exposure by up to 70% compared to conventional continuous fluoroscopy units.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">SAFETY 02</span>
+            <h3>HEPA-Filtered Cath Suite</h3>
+            <p>Our procedure rooms maintain positive pressure laminar airflow, exceeding international sterile surgical standards.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">SAFETY 03</span>
+            <h3>Single-Use Microcatheters</h3>
+            <p>All microcatheters, guidewires, and embolic delivery systems are 100% disposable and never re-sterilized.</p>
+          </div>
+          <div class="journey-step">
+            <span class="step-number">SAFETY 04</span>
+            <h3>Non-Ionic Contrast Media</h3>
+            <p>We utilize premium hypo-osmolar non-ionic contrast agents to safeguard kidney function during angiography.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="kicker">Experience Modern Medical Care</span>
+        <h2>Consult Dr. Rohan at Our Varanasi Center</h2>
+        <p>Book a consultation to discuss how image-guided technology can solve your medical condition safely.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn" onclick="openBooking()">Schedule Consultation ↗</button>
+          <a class="btn secondary" href="tel:18002021801">Call 1800 202 1801</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Dr. Rohan</h3>
+          <div class="footer-tagline">INTERVENTIONAL RADIOLOGY CLINIC</div>
+          <p>Advanced image-guided pinhole care. Dedicated to providing patient-first, scarless, minimally invasive alternatives to conventional surgeries in Varanasi and Eastern UP.</p>
+          <div style="margin-top:16px;">
+            <a href="tel:18002021801" style="color:#fff;font-weight:700;display:inline-block;margin-bottom:6px;">📞 Helpline: 1800 202 1801</a><br>
+            <a href="tel:18002021802" style="color:#ff8a7a;font-weight:700;">🚨 24/7 Emergency: 1800 202 1802</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE PAGES</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Dr. Rohan</a>
+          <a href="treatments.html">Treatments & Procedures</a>
+          <a href="conditions.html">Conditions We Treat</a>
+          <a href="technology.html">Technology & Cath Lab</a>
+          <a href="insights.html">Patient Guides & FAQs</a>
+          <a href="contact.html">Contact & Clinic Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>KEY TREATMENTS</h4>
+          <a href="treatments.html#varicose">Varicose Veins (EVLA/Glue)</a>
+          <a href="treatments.html#fibroids">Uterine Fibroids (UFE)</a>
+          <a href="treatments.html#prostate">Enlarged Prostate (PAE)</a>
+          <a href="treatments.html#knee">Knee Arthritis (GAE)</a>
+          <a href="treatments.html#thyroid">Thyroid Nodule Ablation</a>
+          <a href="treatments.html#oncology">Liver TACE & Cancer Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>CLINIC LOCATION</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div><b>Dr. Rohan IR Clinic</b><br>Varanasi, Uttar Pradesh, India</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒</span>
+            <div><b>Consultation Hours:</b><br>Mon – Sat: 10:00 AM – 7:00 PM</div>
+          </div>
+          <button class="btn" onclick="openBooking()" style="margin-top:10px;width:100%;">Book an Appointment</button>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <span>© 2026 Dr. Rohan | Interventional Radiology Clinic. All rights reserved.</span>
+        <span>Medical Disclaimer • Privacy Policy • Terms of Care</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <button class="btn" onclick="openBooking()">Book a Consultation ↗</button>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBooking()" aria-label="Close modal">×</button>
+      <span class="kicker">Appointment Booking</span>
+      <h2>Consult with Dr. Rohan</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Fill in your details below. Our patient care team will contact you to confirm your appointment.
+      </p>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="field"><label>Patient Full Name *</label><input type="text" required placeholder="Your full name"></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9+ -]{10,15}" placeholder="Phone number"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Preferred Date</label><input type="date" id="preferredDate"></div>
+          <div class="field"><label>Procedure of Interest</label><input type="text" placeholder="e.g. Varicose Veins, UFE, Prostate"></div>
+        </div>
+        <div class="field"><label>Brief Reason / Questions</label><textarea rows="3" placeholder="Symptoms, reports, or inquiries..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;">Confirm Appointment Request →</button>
+        <div class="form-confirmation" id="confirmation">
+          <strong>Thank you! Your request has been recorded.</strong><br>
+          We will call you shortly. For immediate assistance, call <strong>1800 202 1801</strong>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
