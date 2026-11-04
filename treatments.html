@@ -155,40 +155,50 @@
   </header>
 
   <main>
-    <!-- PAGE HERO & PROCEDURES SHOWCASE (MATCHING IR CLINIC INDIA ARCHITECTURE) -->
-    <section class="section white" style="padding: 48px 0 60px;">
+    <!-- PAGE HERO -->
+    <section class="hero procedures-hero" style="padding: 60px 0 45px;">
+      <div class="hero-glow-orb-1"></div>
+      <div class="hero-glow-orb-2"></div>
+      <div class="container" style="text-align:center;max-width:860px;">
+        <span class="kicker"><span class="pulse-dot"></span>Image-Guided Minimally Invasive Care</span>
+        <h1>Interventional Radiology Procedures</h1>
+        <p class="hero-copy" style="margin:0 auto 20px;">
+          We perform image-guided, minimally invasive procedures designed to diagnose and treat conditions with accuracy, safety, and faster recovery. Click any procedure card below for step-by-step clinical protocols.
+        </p>
+        <div class="hero-pills-row">
+          <span class="hero-pill-item"><span class="hero-pill-icon">&#129656;</span> 20 Image-Guided Procedures</span>
+          <span class="hero-pill-item"><span class="hero-pill-icon">&#127973;</span> Same-Day Daycare Discharge</span>
+          <span class="hero-pill-item"><span class="hero-pill-icon">&#128737;</span> 100% Organ Preservation</span>
+          <span class="hero-pill-item"><span class="hero-pill-icon">&#128179;</span> Cashless Mediclaim Approved</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCEDURES SHOWCASE -->
+    <section class="section white" style="padding: 35px 0 60px;">
       <div class="container">
-        <div class="procedures-page-header">
-          <span class="kicker"><span class="pulse-dot"></span>Image-Guided Minimally Invasive Care</span>
-          <h1>Interventional Radiology Procedures</h1>
-          <p>
-            We perform image-guided, minimally invasive procedures designed to diagnose and treat conditions with accuracy, safety, and faster recovery. Click any procedure card below for step-by-step clinical protocols.
-          </p>
+        <!-- Search & Filter Toolbar -->
+        <div class="procedures-toolbar" style="margin-bottom:32px;">
+          <div class="procedure-search-wrap">
+            <input type="text" id="procedureSearch" class="procedure-search-input" oninput="filterProceduresGrid()" placeholder="Search by procedure name (e.g. Chemoport, Biopsy, Fibroid, Stroke)..." aria-label="Search procedures">
+            <span class="procedure-search-icon">&#128269;</span>
+          </div>
 
-          <!-- Search & Filter Toolbar -->
-          <div class="procedures-toolbar">
-            <div class="procedure-search-wrap">
-              <input type="text" id="procedureSearch" class="procedure-search-input" oninput="filterProceduresGrid()" placeholder="Search by procedure name (e.g. Chemoport, Biopsy, Fibroid, Stroke)..." aria-label="Search procedures">
-              <span class="procedure-search-icon">&#128269;</span>
-            </div>
+          <div class="procedure-filter-pills">
+            <button class="procedure-pill active" data-filter="all" onclick="selectProcedureCategory('all', this)">All Procedures</button>
+            <button class="procedure-pill" data-filter="cat-basic" onclick="selectProcedureCategory('cat-basic', this)">Daycare & Diagnostic</button>
+            <button class="procedure-pill" data-filter="cat-vascular" onclick="selectProcedureCategory('cat-vascular', this)">Vascular & Access</button>
+            <button class="procedure-pill" data-filter="cat-women" onclick="selectProcedureCategory('cat-women', this)">Women's Health</button>
+            <button class="procedure-pill" data-filter="cat-urology" onclick="selectProcedureCategory('cat-urology', this)">Men's Health & Urology</button>
+            <button class="procedure-pill" data-filter="cat-joints" onclick="selectProcedureCategory('cat-joints', this)">Joints & Pain</button>
+            <button class="procedure-pill" data-filter="cat-oncology" onclick="selectProcedureCategory('cat-oncology', this)">Oncology & Liver</button>
+            <button class="procedure-pill" data-filter="cat-neuro" onclick="selectProcedureCategory('cat-neuro', this)">Neuro-Intervention</button>
+          </div>
 
-            <div class="procedure-filter-pills">
-              <button class="procedure-pill active" data-filter="all" onclick="selectProcedureCategory('all', this)">All Procedures</button>
-              <button class="procedure-pill" data-filter="cat-basic" onclick="selectProcedureCategory('cat-basic', this)">Daycare & Diagnostic</button>
-              <button class="procedure-pill" data-filter="cat-vascular" onclick="selectProcedureCategory('cat-vascular', this)">Vascular & Access</button>
-              <button class="procedure-pill" data-filter="cat-women" onclick="selectProcedureCategory('cat-women', this)">Women's Health</button>
-              <button class="procedure-pill" data-filter="cat-urology" onclick="selectProcedureCategory('cat-urology', this)">Men's Health & Urology</button>
-              <button class="procedure-pill" data-filter="cat-joints" onclick="selectProcedureCategory('cat-joints', this)">Joints & Pain</button>
-              <button class="procedure-pill" data-filter="cat-oncology" onclick="selectProcedureCategory('cat-oncology', this)">Oncology & Liver</button>
-              <button class="procedure-pill" data-filter="cat-neuro" onclick="selectProcedureCategory('cat-neuro', this)">Neuro-Intervention</button>
-            </div>
-
-            <div style="font-size:13px;color:var(--muted);font-weight:600;" id="procedureResultsCount">
-              Showing 20 procedures &bull; Click any card for full clinical details
-            </div>
+          <div style="font-size:13px;color:var(--muted);font-weight:600;" id="procedureResultsCount">
+            Showing 20 procedures &bull; Click any card for full clinical details
           </div>
         </div>
-
                 <!-- 4-COLUMN PROCEDURE CARDS GRID (WITH REAL CLINICAL ILLUSTRATION IMAGES) -->
         <div class="procedures-grid" id="proceduresGrid">
           

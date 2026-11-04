@@ -481,36 +481,194 @@ img { max-width: 100%; display: block; }
 /* ==========================================================================
    HERO SECTION — HUMAN & GROUNDED
    ========================================================================== */
-.hero {
-  padding: 64px 0 54px;
-  background: linear-gradient(180deg, #f4efe6 0%, #fbf9f5 100%);
+.hero,
+.procedures-hero {
+  position: relative;
+  padding: 68px 0 58px;
+  background-color: #f8f6f0;
+  background-image:
+    /* Top subtle medical cyan glow */
+    radial-gradient(circle 700px at 50% -20%, rgba(78, 210, 198, 0.18), transparent 70%),
+    /* Left soft teal ambient glow */
+    radial-gradient(circle 520px at 8% 28%, rgba(24, 104, 98, 0.1), transparent 60%),
+    /* Right warm terracotta ambient bloom */
+    radial-gradient(circle 480px at 92% 22%, rgba(224, 109, 83, 0.08), transparent 60%),
+    /* Base subtle vertical gradient */
+    linear-gradient(180deg, #f3eee3 0%, #faf8f3 55%, #ffffff 100%);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
+
+/* Precision Medical Cath Lab Coordinate Grid Overlay */
+.hero::before,
+.procedures-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(24, 104, 98, 0.13) 1.25px, transparent 1.25px),
+    linear-gradient(to right, rgba(24, 104, 98, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 104, 98, 0.035) 1px, transparent 1px);
+  background-size: 26px 26px, 104px 104px, 104px 104px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 30%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Concentric Fluoroscopy Radar Rings Watermark */
+.hero::after,
+.procedures-hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle, transparent 160px, rgba(24, 104, 98, 0.035) 161px, transparent 163px),
+    radial-gradient(circle, transparent 280px, rgba(24, 104, 98, 0.04) 281px, transparent 283px),
+    radial-gradient(circle, transparent 400px, rgba(24, 104, 98, 0.03) 401px, transparent 403px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating Ambient Aurora Glow Orbs */
+.hero-glow-orb-1,
+.hero-glow-orb-2 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.hero-glow-orb-1 {
+  top: -60px;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(78, 210, 198, 0.24) 0%, rgba(24, 104, 98, 0.06) 55%, transparent 70%);
+  filter: blur(60px);
+  animation: heroFloatGlow 14s ease-in-out infinite alternate;
+}
+.hero-glow-orb-2 {
+  top: 30px;
+  right: 8%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(224, 109, 83, 0.16) 0%, rgba(224, 109, 83, 0.04) 50%, transparent 70%);
+  filter: blur(55px);
+  animation: heroFloatGlow 18s ease-in-out infinite alternate-reverse;
+}
+@keyframes heroFloatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(22px, -18px) scale(1.08); }
+  100% { transform: translate(-16px, 14px) scale(0.94); }
+}
+
+/* Ensure container content floats cleanly above background patterns */
+.hero > .container,
+.procedures-hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero 2-Column Grid Layout (Text Left, Doctor Card Right) */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 55px;
+  gap: 52px;
 }
-.hero h1 {
+
+/* Enhanced Kicker Badge with Glassmorphism */
+.hero .kicker,
+.procedures-hero .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(24, 104, 98, 0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  box-shadow: 0 4px 14px rgba(12, 33, 50, 0.05);
+  margin-bottom: 16px;
+}
+
+/* Hero Heading with subtle gradient accent */
+.hero h1,
+.procedures-hero h1 {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(38px, 4.8vw, 58px);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin-bottom: 18px;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
   color: var(--oxford);
+  text-wrap: balance;
 }
-.hero h1 em {
+.hero h1 em,
+.procedures-hero h1 em {
   font-style: italic;
   color: var(--teal);
+  background: linear-gradient(135deg, var(--teal) 0%, #2eb6aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+/* Hero Copy */
 .hero-copy {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.8;
-  max-width: 530px;
-  margin-bottom: 26px;
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+
+/* Hero Highlight Pills Ribbon */
+.hero-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+}
+.hero-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(24, 104, 98, 0.16);
+  padding: 7px 15px;
+  border-radius: 24px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--oxford);
+  box-shadow: 0 3px 10px rgba(12, 33, 50, 0.04);
+  transition: all 0.25s ease;
+}
+.hero-pill-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 6px 18px rgba(24, 104, 98, 0.12);
+  background: #ffffff;
+}
+.hero-pill-icon {
+  font-size: 13.5px;
+  color: var(--teal);
 }
 .hero-actions {
   display: flex;
@@ -557,14 +715,18 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-md);
   padding: 14px;
   box-shadow: var(--shadow-card);
+  max-width: 480px;
+  width: 100%;
+  margin-left: auto;
 }
 .doctor-portrait {
   width: 100%;
-  height: 420px;
+  height: 440px;
   object-fit: cover;
   object-position: center 15%;
   border-radius: var(--radius-sm);
   background: var(--teal-soft);
+  display: block;
 }
 .doctor-card-meta {
   position: absolute;
@@ -1427,6 +1589,7 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .doctor-hero-frame { margin: 0 auto; max-width: 460px; }
   .treatments-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }
   .body-explorer-grid { grid-template-columns: 1fr; }
   .journey-grid { grid-template-columns: repeat(2, 1fr); }
