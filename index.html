@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -88,41 +88,206 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="hero-glow-orb-1"></div>
-      <div class="hero-glow-orb-2"></div>
-      <div class="container hero-grid">
-        <div>
-          <span class="kicker"><span class="pulse-dot"></span>OPD Active in Varanasi • Sigra Center</span>
-          <h1>Told You Need Surgery?<br><em>There May Be a Pinhole Alternative.</em></h1>
-          <p class="hero-copy">
-            Over the past decade, image-guided endovascular medicine has transformed surgery. Using advanced ultrasound and Cath Lab fluoroscopy, Dr. Rohan treats Varicose Veins, Uterine Fibroids, Enlarged Prostate, and Knee Pain through a tiny 2mm skin puncture. No large cuts, no stitches, and you walk home the same afternoon.
-          </p>
-          <div class="hero-actions">
-            <button class="btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
-            <a class="btn secondary" href="treatments.html">Explore Pinhole Procedures</a>
-          </div>
+    <!-- HERO SECTION: 4-SLIDE CLINICAL SHOWCASE (INSPIRED BY IR CLINIC INDIA WITH 2S TIME SLIDER) -->
+    <section class="hero-slider-section" id="home" aria-label="Clinical Highlights Showcase">
+      <!-- 2-Second Time Slider Progress Bar -->
+      <div class="hero-slider-progress-track" title="2-Second Auto-Slide Timer">
+        <div class="hero-slider-progress-bar" id="heroSliderProgressBar"></div>
+      </div>
 
-          <div class="hero-trust-bar">
-            <div class="rating-pill">
-              <span class="stars">★★★★★</span>
-              <span><strong>4.9 / 5.0</strong> (180+ Google Reviews)</span>
+      <!-- Left / Right Floating Navigation Arrows -->
+      <button class="hero-slider-arrow prev" onclick="moveHeroSlide(-1)" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="hero-slider-arrow next" onclick="moveHeroSlide(1)" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- Slides Viewport -->
+      <div class="hero-slides-viewport" id="heroSlidesViewport">
+
+        <!-- SLIDE 1: TEAM YOU CAN TRUST (Matches Image 1) -->
+        <div class="hero-slide slide-teal active" data-slide-index="0">
+          <div class="slide-ambient-glow"></div>
+          <div class="container hero-slide-grid">
+            <!-- Left Side: Visual Collage with Watermark Seal -->
+            <div class="slide-visual-col">
+              <div class="slide-collage-card">
+                <div class="slide-watermark-seal">IR</div>
+                <div class="slide-img-frame">
+                  <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=80" alt="Dr. Rohan and Clinical Team at Varanasi Cath Lab" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <div class="slide-floating-chip">
+                  <span class="chip-dot"></span>
+                  <div>
+                    <strong>Dr. Rohan, MD, FVIR</strong>
+                    <span>Fellowship-Trained Interventional Radiologist</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hero-meta-item">
-              <span>💳</span>
-              <span><strong>Cashless Mediclaim</strong> Across All Major TPAs</span>
+
+            <!-- Right Side: Headline + Points + Description + CTA -->
+            <div class="slide-content-col">
+              <span class="slide-kicker"><span class="pulse-dot"></span> Sigra Center • Varanasi</span>
+              <h1 class="slide-headline">BEHIND EVERY PROCEDURE IS A SPECIALIST YOU CAN TRUST.</h1>
+              <div class="slide-rule"></div>
+              <ul class="slide-points-list">
+                <li><span class="point-check">✓</span> Experienced specialists with advanced fellowship training.</li>
+                <li><span class="point-check">✓</span> Advanced Cath Lab, fluoroscopy & DSA technology.</li>
+                <li><span class="point-check">✓</span> Care centred around you with 100% organ preservation.</li>
+              </ul>
+              <p class="slide-subtext">
+                Advanced image-guided pinhole procedures for complex vascular, gynecological, urological, and oncological conditions.
+              </p>
+              <div class="slide-btn-group">
+                <button class="btn slide-primary-btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
+                <a class="btn slide-secondary-btn" href="treatments.html">Explore Procedures</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="doctor-hero-frame">
-          <img class="doctor-portrait" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Dr. Rohan, Consultant Interventional Radiologist in Varanasi" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80'">
-          <div class="doctor-card-meta">
-            <strong>Dr. Rohan, MD, FVIR</strong>
-            <small>VASCULAR & INTERVENTIONAL RADIOLOGIST</small>
-            <p>Fellowship-Trained Specialist in Endovascular Laser, UFE, Prostate PAE & Interventional Oncology.</p>
+        <!-- SLIDE 2: 5,000+ PATIENTS (Matches Image 2) -->
+        <div class="hero-slide slide-sapphire" data-slide-index="1">
+          <div class="slide-ambient-glow"></div>
+          <div class="container hero-slide-grid">
+            <!-- Left Side: Headline + Points + Description + CTA -->
+            <div class="slide-content-col">
+              <span class="slide-kicker"><span class="pulse-dot"></span> Clinical Milestone</span>
+              <h1 class="slide-headline">5,000+ PATIENTS TREATED WITH CARE.</h1>
+              <div class="slide-rule"></div>
+              <ul class="slide-points-list">
+                <li><span class="point-check">✓</span> Patient-first approach & unhurried scan reviews.</li>
+                <li><span class="point-check">✓</span> Safety-led pinhole procedures under local numbing.</li>
+                <li><span class="point-check">✓</span> Dedicated clinical team by your side through recovery.</li>
+              </ul>
+              <p class="slide-subtext">
+                Advanced Interventional Radiology focused on millimeter precision, zero surgical cuts, and same-day daycare discharge.
+              </p>
+              <div class="slide-btn-group">
+                <button class="btn slide-primary-btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
+                <a class="btn slide-secondary-btn" href="insights.html">Patient Success Stories</a>
+              </div>
+            </div>
+
+            <!-- Right Side: Giant Watermark 5k+ & Cath Lab Intervention Action -->
+            <div class="slide-visual-col">
+              <div class="slide-collage-card">
+                <div class="slide-watermark-big-text">5k+</div>
+                <div class="slide-img-frame">
+                  <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80" alt="Cath Lab Catheter Interventions by Dr. Rohan" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <div class="slide-floating-chip">
+                  <span class="chip-badge">99.4%</span>
+                  <div>
+                    <strong>High Clinical Success Rate</strong>
+                    <span>Over 5,000+ successful pinhole treatments</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- SLIDE 3: 10+ YEARS & FACILITIES (Matches Image 3) -->
+        <div class="hero-slide slide-emerald" data-slide-index="2">
+          <div class="slide-ambient-glow"></div>
+          <div class="container hero-slide-grid">
+            <!-- Left Side: Headline + Points + Description + CTA -->
+            <div class="slide-content-col">
+              <span class="slide-kicker"><span class="pulse-dot"></span> Regional Excellence</span>
+              <h1 class="slide-headline">10+ YEARS EXPERIENCE. ONE VISION FOR BETTER CARE.</h1>
+              <div class="slide-rule"></div>
+              <ul class="slide-points-list">
+                <li><span class="point-check">✓</span> Growing access to specialised pinhole medicine.</li>
+                <li><span class="point-check">✓</span> Advanced endovascular laser & embolization expertise.</li>
+                <li><span class="point-check">✓</span> Care closer to patients across Varanasi, Eastern UP & Bihar.</li>
+              </ul>
+              <p class="slide-subtext">
+                Expanding access to world-class, minimally invasive Interventional Radiology so patients no longer need open surgery.
+              </p>
+              <div class="slide-btn-group">
+                <button class="btn slide-primary-btn" onclick="openBooking()">Schedule a Visit ↗</button>
+                <a class="btn slide-secondary-btn" href="technology.html">Explore Cath Lab Facility</a>
+              </div>
+            </div>
+
+            <!-- Right Side: Clinic Collage with Location Pins (Jaipur/Surat style) -->
+            <div class="slide-visual-col">
+              <div class="slide-facility-collage">
+                <div class="facility-grid-item item-main">
+                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=700&q=80" alt="Sigra Varanasi Clinic Consultation Suite">
+                  <span class="location-pin-tag">📍 Sigra, Varanasi</span>
+                </div>
+                <div class="facility-grid-item item-sub1">
+                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Cath Lab Suite">
+                  <span class="location-pin-tag">📍 Cath Lab Suite</span>
+                </div>
+                <div class="facility-grid-item item-sub2">
+                  <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=600&q=80" alt="Doppler Ultrasound Lab">
+                  <span class="location-pin-tag">📍 Purvanchal Center</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: PINHOLE ALTERNATIVE (Matches Image 4) -->
+        <div class="hero-slide slide-amethyst" data-slide-index="3">
+          <div class="slide-ambient-glow"></div>
+          <div class="container hero-slide-grid">
+            <!-- Left Side: Doctor Hero Portrait Frame -->
+            <div class="slide-visual-col">
+              <div class="doctor-hero-frame slide-doctor-card">
+                <img class="doctor-portrait" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Dr. Rohan, Consultant Interventional Radiologist" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80'">
+                <div class="doctor-card-meta">
+                  <strong>Dr. Rohan, MD, FVIR</strong>
+                  <small>VASCULAR & INTERVENTIONAL RADIOLOGIST</small>
+                  <p>Fellowship-Trained Specialist in Endovascular Laser, UFE, Prostate PAE & Interventional Oncology.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Headline + Points + Description + CTA -->
+            <div class="slide-content-col">
+              <span class="slide-kicker"><span class="pulse-dot"></span> Pinhole Precision Surgery</span>
+              <h1 class="slide-headline">TOLD YOU NEED SURGERY? THERE MAY BE A PINHOLE ALTERNATIVE.</h1>
+              <div class="slide-rule"></div>
+              <ul class="slide-points-list">
+                <li><span class="point-check">✓</span> Precision Treatments (2mm tiny skin puncture).</li>
+                <li><span class="point-check">✓</span> Painless Recovery without cuts, scars or stitches.</li>
+                <li><span class="point-check">✓</span> Real Results with 100% organ preservation.</li>
+              </ul>
+              <p class="slide-subtext">
+                No large incisions. No surgical scars. No long hospital stays. Just expert, image-guided pinhole care. Walk home in 4–6 hours.
+              </p>
+              <div class="slide-btn-group">
+                <button class="btn slide-primary-btn" onclick="openBooking()">Book In-Clinic Consultation ↗</button>
+                <a class="btn slide-secondary-btn" href="treatments.html">Explore 20+ Procedures</a>
+              </div>
+              <div class="slide-trust-row">
+                <span class="slide-trust-pill">★ ★ ★ ★ ★ <strong>4.9 / 5.0</strong> (180+ Reviews)</span>
+                <span class="slide-trust-pill">💳 <strong>Cashless Mediclaim</strong> All Major TPAs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Slider Controls & 2s Timer Indicator -->
+      <div class="hero-slider-bottom-bar">
+        <div class="hero-slider-dots" id="heroSliderDots">
+          <button class="slider-dot active" onclick="goToHeroSlide(0)" aria-label="Go to Slide 1"><span class="dot-num">01</span><span class="dot-title">Trust & Team</span></button>
+          <button class="slider-dot" onclick="goToHeroSlide(1)" aria-label="Go to Slide 2"><span class="dot-num">02</span><span class="dot-title">5,000+ Treated</span></button>
+          <button class="slider-dot" onclick="goToHeroSlide(2)" aria-label="Go to Slide 3"><span class="dot-num">03</span><span class="dot-title">10+ Years</span></button>
+          <button class="slider-dot" onclick="goToHeroSlide(3)" aria-label="Go to Slide 4"><span class="dot-num">04</span><span class="dot-title">Pinhole Care</span></button>
+        </div>
+
+        <div class="hero-slider-timer-status" id="heroSliderTimerStatus" title="2-Second Auto-Slider Active">
+          <span class="timer-pulse-circle"></span>
+          <span class="timer-label">2s Slide Timer</span>
         </div>
       </div>
     </section>

@@ -328,7 +328,133 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 10. Initialize 2-Second Hero Slider (IR Clinic India Architecture)
+  initHeroSlider();
 });
+
+// ==========================================================================
+// HERO 2-SECOND AUTO-SLIDER (INSPIRED BY IR CLINIC INDIA)
+// ==========================================================================
+let currentHeroSlide = 0;
+const totalHeroSlides = 4;
+const HERO_SLIDE_DURATION = 2000; // 2 seconds as requested by client
+let heroSlideTimer = null;
+let isHeroSliderPaused = false;
+
+function initHeroSlider() {
+  const slider = document.getElementById('home');
+  if (!slider || !document.querySelector('.hero-slide')) return;
+
+  goToHeroSlide(0);
+
+  // Pause on hover so patient can read
+  slider.addEventListener('mouseenter', () => {
+    pauseHeroSlider();
+  });
+  slider.addEventListener('mouseleave', () => {
+    resumeHeroSlider();
+  });
+
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  slider.addEventListener('touchstart', (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      touchStartX = e.changedTouches[0].screenX;
+    }
+  }, { passive: true });
+
+  slider.addEventListener('touchend', (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 45) {
+        moveHeroSlide(1); // Swiped left -> next
+      } else if (touchEndX - touchStartX > 45) {
+        moveHeroSlide(-1); // Swiped right -> prev
+      }
+    }
+  }, { passive: true });
+
+  // Keyboard navigation when hero is in view
+  document.addEventListener('keydown', (e) => {
+    if (window.scrollY < 650) {
+      if (e.key === 'ArrowLeft') moveHeroSlide(-1);
+      if (e.key === 'ArrowRight') moveHeroSlide(1);
+    }
+  });
+}
+
+function goToHeroSlide(index) {
+  currentHeroSlide = (index + totalHeroSlides) % totalHeroSlides;
+  
+  // Update slide elements
+  const slides = document.querySelectorAll('.hero-slide');
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentHeroSlide);
+  });
+
+  // Update dots
+  const dots = document.querySelectorAll('.slider-dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentHeroSlide);
+  });
+
+  // Restart 2-second progress bar & timer
+  restartHeroTimer();
+}
+
+function moveHeroSlide(direction) {
+  goToHeroSlide(currentHeroSlide + direction);
+}
+
+function restartHeroTimer() {
+  clearTimeout(heroSlideTimer);
+  const bar = document.getElementById('heroSliderProgressBar');
+  if (bar) {
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    void bar.offsetWidth; // Force DOM reflow
+    if (!isHeroSliderPaused) {
+      bar.style.transition = `width ${HERO_SLIDE_DURATION}ms linear`;
+      bar.style.width = '100%';
+    }
+  }
+
+  if (!isHeroSliderPaused) {
+    heroSlideTimer = setTimeout(() => {
+      moveHeroSlide(1);
+    }, HERO_SLIDE_DURATION);
+  }
+}
+
+function pauseHeroSlider() {
+  isHeroSliderPaused = true;
+  clearTimeout(heroSlideTimer);
+  const bar = document.getElementById('heroSliderProgressBar');
+  if (bar) {
+    const computedWidth = window.getComputedStyle(bar).width;
+    bar.style.transition = 'none';
+    bar.style.width = computedWidth;
+  }
+  const statusEl = document.getElementById('heroSliderTimerStatus');
+  if (statusEl) {
+    statusEl.classList.add('paused');
+    const label = statusEl.querySelector('.timer-label');
+    if (label) label.textContent = 'Paused (Hover)';
+  }
+}
+
+function resumeHeroSlider() {
+  isHeroSliderPaused = false;
+  const statusEl = document.getElementById('heroSliderTimerStatus');
+  if (statusEl) {
+    statusEl.classList.remove('paused');
+    const label = statusEl.querySelector('.timer-label');
+    if (label) label.textContent = '2s Slide Timer';
+  }
+  restartHeroTimer();
+}
 
 // ==========================================================================
 // PROCEDURES DATA & INTERACTIVE MODAL (MATCHING IR CLINIC INDIA ARCHITECTURE)

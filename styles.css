@@ -761,6 +761,591 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================================
+   HERO 4-SLIDE CLINICAL SHOWCASE (INSPIRED BY IR CLINIC INDIA WITH 2S SLIDER)
+   ========================================================================== */
+.hero-slider-section {
+  position: relative;
+  background-color: var(--oxford);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 620px;
+}
+
+/* Precision Cath Lab Coordinate Grid Overlay */
+.hero-slider-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.08) 1.25px, transparent 1.25px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px, 112px 112px, 112px 112px;
+  background-position: center top;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2-Second Time Slider Progress Bar */
+.hero-slider-progress-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  z-index: 30;
+  overflow: hidden;
+}
+.hero-slider-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #186862 0%, #4ed2c6 65%, #ffffff 100%);
+  box-shadow: 0 0 14px rgba(78, 210, 198, 0.85);
+  will-change: width;
+}
+
+/* Left / Right Floating Circular Navigation Arrows */
+.hero-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 25;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.hero-slider-arrow:hover {
+  background: #ffffff;
+  color: var(--oxford);
+  border-color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+.hero-slider-arrow.prev { left: 24px; }
+.hero-slider-arrow.next { right: 24px; }
+
+/* Slides Viewport & Base Slide */
+.hero-slides-viewport {
+  position: relative;
+  width: 100%;
+  min-height: 590px;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.985);
+  display: flex;
+  align-items: center;
+  padding: 56px 0 76px;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Atmospheric Slide Themes (Matching IR Clinic India Energy) */
+.slide-teal {
+  background: 
+    radial-gradient(circle 850px at 75% 35%, rgba(78, 210, 198, 0.24), transparent 70%),
+    radial-gradient(circle 500px at 15% 20%, rgba(24, 104, 98, 0.35), transparent 60%),
+    linear-gradient(135deg, #091e2b 0%, #0d383f 45%, #155e58 100%);
+}
+.slide-sapphire {
+  background: 
+    radial-gradient(circle 850px at 25% 35%, rgba(64, 153, 235, 0.25), transparent 70%),
+    radial-gradient(circle 500px at 85% 20%, rgba(21, 60, 95, 0.4), transparent 60%),
+    linear-gradient(135deg, #081726 0%, #0f3050 45%, #195280 100%);
+}
+.slide-emerald {
+  background: 
+    radial-gradient(circle 850px at 80% 30%, rgba(52, 211, 153, 0.22), transparent 70%),
+    radial-gradient(circle 500px at 20% 70%, rgba(20, 85, 68, 0.35), transparent 60%),
+    linear-gradient(135deg, #07211a 0%, #0c3e32 45%, #146955 100%);
+}
+.slide-amethyst {
+  /* Signature IR Clinic Vibrant Plum/Magenta Gradient */
+  background: 
+    radial-gradient(circle 850px at 30% 30%, rgba(232, 90, 178, 0.28), transparent 70%),
+    radial-gradient(circle 500px at 85% 70%, rgba(125, 34, 107, 0.4), transparent 60%),
+    linear-gradient(135deg, #220b29 0%, #4a1548 45%, #7e246e 100%);
+}
+
+/* 2-Column Hero Slide Grid */
+.hero-slide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 52px;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+/* Slide Typography & Points */
+.slide-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a7e9e2;
+  margin-bottom: 16px;
+}
+.slide-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-wrap: balance;
+}
+.slide-rule {
+  width: 100%;
+  max-width: 520px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.24);
+  margin: 18px 0 20px;
+}
+.slide-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.slide-points-list li {
+  font-size: clamp(15px, 1.25vw, 17.5px);
+  font-weight: 500;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  line-height: 1.4;
+}
+.point-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(78, 210, 198, 0.22);
+  color: #4ed2c6;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid rgba(78, 210, 198, 0.5);
+  flex-shrink: 0;
+}
+.slide-subtext {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 540px;
+  margin-bottom: 24px;
+}
+.slide-btn-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.slide-primary-btn {
+  background: #ffffff !important;
+  color: var(--oxford) !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  transition: all 0.22s ease;
+}
+.slide-primary-btn:hover {
+  background: #4ed2c6 !important;
+  color: var(--oxford) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(78, 210, 198, 0.4);
+}
+.slide-secondary-btn {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(8px);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  transition: all 0.22s ease;
+}
+.slide-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px);
+}
+.slide-trust-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 18px;
+}
+.slide-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #ffffff;
+}
+.slide-trust-pill strong { color: #ffffff; }
+
+/* Visual Collage & Media Frames */
+.slide-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.slide-collage-card {
+  position: relative;
+  background: rgba(12, 33, 50, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  max-width: 480px;
+  width: 100%;
+}
+.slide-watermark-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+.slide-watermark-big-text {
+  position: absolute;
+  top: -24px;
+  right: 14px;
+  font-size: clamp(90px, 12vw, 150px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.16);
+  line-height: 0.85;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+.slide-img-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 380px;
+}
+.slide-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+.slide-floating-chip {
+  position: absolute;
+  bottom: -16px;
+  left: 14px;
+  right: 14px;
+  background: var(--oxford);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 12px 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+.chip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ed2c6;
+  box-shadow: 0 0 10px #4ed2c6;
+  flex-shrink: 0;
+}
+.chip-badge {
+  background: rgba(78, 210, 198, 0.2);
+  border: 1px solid #4ed2c6;
+  color: #4ed2c6;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.slide-floating-chip strong {
+  display: block;
+  font-size: 13.5px;
+  color: #ffffff;
+}
+.slide-floating-chip span {
+  display: block;
+  font-size: 11px;
+  color: #a7d0cb;
+}
+
+/* Facility Collage (Slide 3 - Matching Image 3) */
+.slide-facility-collage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  max-width: 490px;
+  width: 100%;
+  height: 380px;
+}
+.facility-grid-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.facility-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.facility-grid-item.item-main {
+  grid-row: 1 / span 2;
+}
+.location-pin-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(12, 33, 50, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Slide 4 Doctor Card Modification */
+.slide-doctor-card {
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Bottom Pagination & 2s Timer Status Bar */
+.hero-slider-bottom-bar {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  z-index: 25;
+}
+.hero-slider-dots {
+  display: flex;
+  gap: 8px;
+  background: rgba(12, 33, 50, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 8px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.slider-dot {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.22s ease;
+}
+.slider-dot .dot-num {
+  font-weight: 800;
+  color: #a7e9e2;
+}
+.slider-dot.active {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.slider-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* 2s Timer Indicator Pill */
+.hero-slider-timer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(12, 33, 50, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(78, 210, 198, 0.35);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #4ed2c6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.timer-pulse-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ed2c6;
+  box-shadow: 0 0 8px #4ed2c6;
+  animation: timerPulse 1.2s infinite;
+}
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.hero-slider-timer-status.paused {
+  border-color: rgba(224, 109, 83, 0.4);
+  color: #f7a492;
+}
+.hero-slider-timer-status.paused .timer-pulse-circle {
+  background: #e06d53;
+  box-shadow: 0 0 8px #e06d53;
+  animation: none;
+}
+
+/* Responsive Rules for Hero Slider */
+@media (max-width: 992px) {
+  .hero-slider-section {
+    min-height: auto;
+  }
+  .hero-slides-viewport {
+    min-height: auto;
+  }
+  .hero-slide {
+    position: relative;
+    padding: 40px 0 70px;
+    opacity: 0;
+    display: none;
+  }
+  .hero-slide.active {
+    display: flex;
+    opacity: 1;
+  }
+  .hero-slide-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .slide-visual-col {
+    order: 2; /* Put text first on tablets */
+  }
+  .slide-content-col {
+    order: 1;
+  }
+  .hero-slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .hero-slider-arrow.prev { left: 10px; }
+  .hero-slider-arrow.next { right: 10px; }
+  .slider-dot .dot-title { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-slide {
+    padding: 30px 0 65px;
+  }
+  .slide-headline {
+    font-size: 24px;
+  }
+  .slide-points-list li {
+    font-size: 14.5px;
+  }
+  .slide-img-frame {
+    height: 280px;
+  }
+  .slide-facility-collage {
+    height: 280px;
+  }
+  .slide-floating-chip {
+    position: static;
+    margin-top: 10px;
+  }
+  .hero-slider-bottom-bar {
+    gap: 10px;
+    bottom: 12px;
+  }
+  .slider-dot {
+    padding: 4px 10px;
+  }
+  .hero-slider-timer-status {
+    padding: 4px 10px;
+    font-size: 10.5px;
+  }
+}
+
+/* ==========================================================================
    ACCREDITATION & CLINICAL REASSURANCE BAR
    ========================================================================== */
 .accreditation-bar {
