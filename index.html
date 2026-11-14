@@ -870,87 +870,89 @@
         </div>
 
         <div class="body-explorer-grid">
-          <!-- Interactive Silhouette Vector -->
-          <div class="body-silhouette-container">
-            <svg class="body-svg" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="bodyBase" opacity="0.25" fill="#186862">
-                <circle cx="150" cy="55" r="32"/>
-                <rect x="142" y="87" width="16" height="25" rx="4"/>
-                <path d="M110 115 C110 110, 190 110, 190 115 L195 240 C195 245, 105 245, 105 240 Z"/>
-                <path d="M106 240 C106 240, 194 240, 194 240 L185 305 L115 305 Z"/>
-                <path d="M108 120 L75 220 L65 330 L80 335 L92 230 L115 140 Z"/>
-                <path d="M192 120 L225 220 L235 330 L220 335 L208 230 L185 140 Z"/>
-                <path d="M116 308 L110 440 L105 570 L132 570 L140 440 L146 308 Z"/>
-                <path d="M184 308 L190 440 L195 570 L168 570 L160 440 L154 308 Z"/>
-              </g>
+          <!-- Left Column: Realistic Interactive Anatomical Figure Card (Matching Reference Screenshots) -->
+          <div class="anatomy-viewer-card">
+            <!-- Top Dual Segmented Switchers -->
+            <div class="anatomy-switch-bar">
+              <div class="anatomy-switch-pill" role="radiogroup" aria-label="Gender Selection">
+                <button type="button" class="switch-opt active" id="btnGenderFemale" onclick="setBodyGender('female')">Female</button>
+                <button type="button" class="switch-opt" id="btnGenderMale" onclick="setBodyGender('male')">Male</button>
+              </div>
+              <div class="anatomy-switch-pill" role="radiogroup" aria-label="View Selection">
+                <button type="button" class="switch-opt active" id="btnViewFront" onclick="setBodyView('front')">Front</button>
+                <button type="button" class="switch-opt" id="btnViewBack" onclick="setBodyView('back')">Back</button>
+              </div>
+            </div>
 
-              <!-- Interactive Clickable Zones -->
-              <g class="body-zone-btn active" data-zone="head" onclick="selectBodyZone('head')">
-                <circle cx="150" cy="55" r="34" fill="#186862" opacity="0.6"/>
-                <rect x="139" y="86" width="22" height="26" rx="4" fill="#186862" opacity="0.6"/>
-                <text x="150" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">HEAD</text>
-              </g>
+            <!-- Figure Canvas with Anatomical Image and Hotspot Overlays -->
+            <div class="anatomy-figure-container">
+              <div class="anatomy-figure-wrapper" id="anatomyFigureWrapper">
+                <img id="anatomyFigureImg" class="anatomy-figure-img" src="images/body/female-body.jpg" alt="Interactive Anatomical Human Body Map">
+                <!-- Dynamic Interactive Hotspots Layer -->
+                <div class="anatomy-hotspots-layer" id="anatomyHotspots"></div>
+              </div>
+            </div>
 
-              <g class="body-zone-btn" data-zone="chest" onclick="selectBodyZone('chest')">
-                <rect x="114" y="118" width="72" height="60" rx="8" fill="#186862" opacity="0.5"/>
-                <text x="150" y="152" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">CHEST</text>
-              </g>
-
-              <g class="body-zone-btn" data-zone="abdomen" onclick="selectBodyZone('abdomen')">
-                <rect x="112" y="184" width="76" height="52" rx="8" fill="#186862" opacity="0.5"/>
-                <text x="150" y="214" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">ABDOMEN</text>
-              </g>
-
-              <g class="body-zone-btn" data-zone="pelvis" onclick="selectBodyZone('pelvis')">
-                <rect x="110" y="242" width="80" height="58" rx="8" fill="#186862" opacity="0.5"/>
-                <text x="150" y="274" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">PELVIS</text>
-              </g>
-
-              <g class="body-zone-btn" data-zone="limbs" onclick="selectBodyZone('limbs')">
-                <rect x="98" y="315" width="104" height="240" rx="12" fill="#186862" opacity="0.35"/>
-                <text x="150" y="440" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">LEGS & JOINTS</text>
-              </g>
-            </svg>
+            <div class="anatomy-viewer-hint">
+              <span>💡 Tap any anatomical hotspot or button to view pinhole treatment details</span>
+            </div>
           </div>
 
-          <!-- Controls & Detailed Info -->
+          <!-- Right Column: Controls & Detailed Info -->
           <div class="body-controls">
             <div class="body-pill-grid">
               <button class="body-pill active" data-zone="head" onclick="selectBodyZone('head')">
-                01. Head & Neck <span>→</span>
+                01. Brain & Eyes <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="neck" onclick="selectBodyZone('neck')">
+                02. Neck & Thyroid <span>→</span>
               </button>
               <button class="body-pill" data-zone="chest" onclick="selectBodyZone('chest')">
-                02. Chest & Lungs <span>→</span>
+                03. Chest & Lungs <span>→</span>
               </button>
               <button class="body-pill" data-zone="abdomen" onclick="selectBodyZone('abdomen')">
-                03. Abdomen & Liver <span>→</span>
+                04. Abdomen & Liver <span>→</span>
               </button>
-              <button class="body-pill" data-zone="pelvis" onclick="selectBodyZone('pelvis')">
-                04. Pelvis & Reproductive <span>→</span>
+              <button class="body-pill" id="bodyPillPelvis" data-zone="uterus" onclick="selectBodyZone(currentBodyGender === 'female' ? 'uterus' : 'pelvis')">
+                05. Uterus & Pelvis <span>→</span>
               </button>
-              <button class="body-pill" data-zone="limbs" onclick="selectBodyZone('limbs')" style="grid-column:span 2;">
-                05. Limbs, Veins & Knee Joint <span>→</span>
+              <button class="body-pill" data-zone="limbs" onclick="selectBodyZone('limbs')">
+                06. Legs, Veins & Knee <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="hand" onclick="selectBodyZone('hand')">
+                07. Hand & Vascular Access <span>→</span>
+              </button>
+              <button class="body-pill" data-zone="spine" onclick="selectBodyZone('spine')">
+                08. Spine & Musculoskeletal <span>→</span>
               </button>
             </div>
 
             <!-- Dynamic Detail Display Card -->
-            <div class="body-detail-card">
-              <h3 id="bodyZoneTitle">Head & Neck Interventions</h3>
-              <p id="bodyZoneDesc">Non-surgical image-guided procedures for thyroid nodules, vascular lesions, and cerebrovascular conditions without open surgery or neck scars.</p>
+            <div class="body-detail-card" id="bodyDetailCard">
+              <div class="body-detail-header">
+                <span class="body-detail-badge" id="bodyZoneBadge">NEURO & SENSORY</span>
+                <h3 id="bodyZoneTitle">Brain & Neurovascular Interventions</h3>
+              </div>
+              <p id="bodyZoneDesc">Minimally invasive endovascular procedures for brain aneurysms, vascular malformations (AVM), stroke thrombectomy, and dural arteriovenous fistulas via a tiny pinhole in the wrist or groin.</p>
               
-              <div style="font-size:11.5px;font-weight:700;color:var(--oxford);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">
-                Available Interventions:
+              <div class="body-detail-subhead">
+                Verified IR Pinhole Procedures:
               </div>
               <div class="condition-tags" id="bodyZoneTreatments">
-                <span class="condition-tag">Thyroid Nodule Ablation (RFA / Microwave)</span>
+                <span class="condition-tag">Brain Aneurysm Coiling</span>
                 <span class="condition-tag">Carotid Artery Stenting (CAS)</span>
-                <span class="condition-tag">Brain Aneurysm Coiling & AVM</span>
-                <span class="condition-tag">Head & Neck Vascular Malformations</span>
-                <span class="condition-tag">Epistaxis (Nosebleed) Embolization</span>
+                <span class="condition-tag">Acute Stroke Thrombectomy</span>
+                <span class="condition-tag">Cerebral Angiography (DSA)</span>
+                <span class="condition-tag">AVM Embolization</span>
               </div>
 
-              <div style="margin-top:16px;padding:12px;background:#fff;border-radius:6px;border-left:3px solid var(--teal);font-size:12.5px;color:var(--ink);">
-                <strong>Clinical Takeaway:</strong> <span id="bodyZoneHighlight">Thyroid RFA shrinks benign nodules through a needle puncture—preserving normal thyroid function with zero visible neck scarring.</span>
+              <div class="body-detail-takeaway">
+                <strong>Clinical Takeaway:</strong> <span id="bodyZoneHighlight">Pinhole microcatheters navigate inside brain blood vessels with zero cranial skull surgery or bone cuts.</span>
+              </div>
+
+              <div class="body-detail-actions">
+                <button class="btn body-cta-btn" id="bodyZoneCta" onclick="openBooking('Brain Aneurysm Coiling')">Book Consultation for this Condition ↗</button>
+                <a class="btn secondary" href="treatments.html">Explore All 20+ Procedures</a>
               </div>
             </div>
           </div>

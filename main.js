@@ -66,97 +66,278 @@ function filterCategory(catKey, btn) {
   });
 }
 
-// Body Explorer Data based on IR Clinic India clinical standards
+// ==========================================================================
+// INTERACTIVE ANATOMICAL BODY EXPLORER (MATCHING USER SCREENSHOTS)
+// ==========================================================================
+
+let currentBodyGender = 'female';
+let currentBodyView = 'front';
+let currentBodyZone = 'head';
+
+const hotspotsConfig = {
+  female_front: [
+    { zone: "head", title: "Eye & Brain", label: "Eye", left: "64.3%", top: "9.1%", width: "11.8%", height: "5.8%" },
+    { zone: "neck", title: "Mouth, Nose & Neck", label: "Mouth & Nose", left: "19.4%", top: "12.0%", width: "26.8%", height: "6.0%" },
+    { zone: "chest", title: "Chest & Lungs", label: "Chest", left: "65.0%", top: "26.4%", width: "12.6%", height: "5.6%" },
+    { zone: "abdomen", title: "Abdomen & Liver", label: "Abdomen", left: "43.0%", top: "35.0%", width: "22.8%", height: "5.6%" },
+    { zone: "hand", title: "Hand & Wrist Vascular Access", label: "Hand", left: "19.4%", top: "43.1%", width: "14.3%", height: "5.6%" },
+    { zone: "uterus", title: "Uterus & Pelvic Care (UFE)", label: "Uterus", left: "44.4%", top: "56.0%", width: "14.3%", height: "5.6%" },
+    { zone: "limbs", title: "Legs, Veins & Knee", label: "Leg", left: "63.0%", top: "77.2%", width: "11.6%", height: "5.6%" }
+  ],
+  male_front: [
+    { zone: "head", title: "Eye & Brain", label: "Eye", left: "55.5%", top: "7.0%", width: "12.8%", height: "6.4%" },
+    { zone: "neck", title: "Mouth, Nose & Neck", label: "Mouth & Nose", left: "22.8%", top: "10.2%", width: "22.8%", height: "6.8%" },
+    { zone: "chest", title: "Chest & Lungs", label: "Chest", left: "59.2%", top: "22.8%", width: "10.4%", height: "7.0%" },
+    { zone: "abdomen", title: "Abdomen & Liver", label: "Abdomen", left: "44.0%", top: "34.4%", width: "16.5%", height: "6.0%" },
+    { zone: "hand", title: "Hand & Wrist Vascular Access", label: "Hand", left: "23.3%", top: "40.5%", width: "13.0%", height: "6.8%" },
+    { zone: "pelvis", title: "Prostate & Pelvic Care (PAE)", label: "Pelvis", left: "44.4%", top: "55.5%", width: "13.2%", height: "6.0%" },
+    { zone: "limbs", title: "Legs, Veins & Knee", label: "Leg", left: "57.5%", top: "76.2%", width: "9.2%", height: "5.8%" }
+  ],
+  back: [
+    { zone: "head", title: "Brain & Cranial", label: "Brain", left: "61.0%", top: "2.6%", width: "18.5%", height: "6.2%" },
+    { zone: "neck", title: "Neck & Cervical Spine", label: "Neck", left: "61.9%", top: "10.4%", width: "16.6%", height: "6.5%" },
+    { zone: "spine", title: "Hip Joint & Pelvis", label: "Hip", left: "71.0%", top: "37.5%", width: "15.0%", height: "6.0%" },
+    { zone: "spine", title: "Spine & Vertebroplasty", label: "Spinal", left: "41.3%", top: "48.1%", width: "19.3%", height: "6.4%" }
+  ]
+};
+
 const bodyData = {
   head: {
-    title: "Head & Neck Interventions",
-    desc: "Non-surgical image-guided procedures for thyroid nodules, vascular lesions, and cerebrovascular conditions without open surgery or neck scars.",
+    badge: "NEURO & CRANIAL",
+    title: "Brain & Neurovascular Interventions",
+    desc: "Minimally invasive endovascular procedures for brain aneurysms, vascular malformations (AVM), stroke thrombectomy, and dural arteriovenous fistulas via a tiny pinhole in the wrist or groin.",
+    treatments: [
+      "Brain Aneurysm Coiling (Pinhole)",
+      "Carotid Artery Stenting (CAS)",
+      "Acute Ischemic Stroke Thrombectomy",
+      "Cerebral Angiography (DSA)",
+      "Intracranial Stenting & AVM Embolization"
+    ],
+    highlight: "Pinhole microcatheters navigate inside brain blood vessels under live Cath Lab fluoroscopy with zero open cranial skull cuts.",
+    ctaProcedure: "Brain Aneurysm Coiling"
+  },
+  neck: {
+    badge: "HEAD & THYROID",
+    title: "Head, Neck & Thyroid Interventions",
+    desc: "Image-guided thermal ablation and embolization for benign thyroid nodules, neck vascular malformations, and severe intractable nosebleeds without visible neck incisions or scars.",
     treatments: [
       "Thyroid Nodule Ablation (RFA / Microwave)",
-      "Carotid Artery Stenting (CAS)",
-      "Brain Aneurysm Coiling & AVM",
-      "Head & Neck Vascular Malformations",
-      "Epistaxis (Severe Nosebleed) Embolization"
+      "Carotid Body Tumor Embolization",
+      "Head & Neck Hemangioma Sclerotherapy",
+      "Epistaxis (Severe Nosebleed) Embolization",
+      "Parathyroid Adenoma Ablation"
     ],
-    highlight: "Thyroid RFA shrinks benign thyroid nodules through a needle puncture—preserving normal thyroid function with zero visible neck scarring."
+    highlight: "Thyroid RFA preserves healthy thyroid tissue and natural hormone balance with zero visible surgical scars on the neck.",
+    ctaProcedure: "Thyroid Nodule Ablation (RFA)"
   },
   chest: {
-    title: "Thoracic & Pulmonary Procedures",
-    desc: "Targeted interventions for lung lesions, chronic fluid collections, long-term IV therapy, and acute pulmonary bleeding.",
+    badge: "THORACIC & ONCOLOGY ACCESS",
+    title: "Thoracic, Pulmonary & Oncology Access",
+    desc: "Precision image-guided vascular access and lung interventions for chemotherapy, recurrent pleural effusion, chronic lung infections, and hemoptysis (coughing blood).",
     treatments: [
-      "Chemoport Insertion (Long-term Chemotherapy)",
-      "PICC Line Insertion (IV Antibiotics / TPN)",
+      "Chemoport Placement for Cancer Chemotherapy",
+      "PICC Line Insertion (IV Therapy & TPN)",
       "Bronchial Artery Embolization (Hemoptysis)",
       "CT-Guided Precision Lung Biopsy",
-      "Pleural Effusion Drainage & Pigtail Insertion"
+      "Pigtail Catheter Pleural Fluid Drainage"
     ],
-    highlight: "Chemoports & PICC lines are placed under real-time ultrasound and fluoroscopic guidance, providing safe, pain-free vascular access for cancer treatment."
+    highlight: "Chemoports and PICC lines placed comfortably under local numbing in 20 minutes, providing safe, pain-free long-term vascular access.",
+    ctaProcedure: "Chemoport Insertion"
   },
   abdomen: {
+    badge: "HEPATOBILIARY & GI",
     title: "Abdominal & Hepatobiliary Interventions",
-    desc: "Advanced interventional oncology and organ-sparing treatments for liver tumors, acute bleeding, and abscesses.",
+    desc: "Advanced targeted therapies for primary liver cancer (HCC), liver metastases, acute gastrointestinal hemorrhage, and obstructive jaundice without major open abdominal surgery.",
     treatments: [
-      "TACE & TARE for Liver Tumors (HCC / Metastases)",
-      "Microwave / Radiofrequency Tumor Ablation",
-      "GI Bleed Embolization (Ulcers / Diverticula)",
-      "Pigtail Catheter Drainage for Liver Abscess & Ascites",
-      "Biliary Stenting & Percutaneous Drainage (PTBD)"
+      "TACE & TARE for Liver Cancer (HCC)",
+      "Liver Tumor Microwave / Radiofrequency Ablation",
+      "GI Bleed Embolization (Stomach / Ulcers)",
+      "Biliary Stenting & Percutaneous Drainage (PTBD)",
+      "Pigtail Drainage for Liver Abscess & Ascites"
     ],
-    highlight: "TACE delivers high-concentration chemotherapy directly to the liver tumor's blood supply while blocking its flow, minimizing systemic side effects."
+    highlight: "TACE delivers high-concentration chemotherapy directly through tumor-feeding arteries while blocking blood supply, sparing healthy liver tissue.",
+    ctaProcedure: "Liver TACE / Cancer"
   },
-  pelvis: {
-    title: "Pelvic & Reproductive Health (Men & Women)",
-    desc: "Breakthrough pinhole treatments for uterine fibroids, enlarged prostate (BPH), varicoceles, and pelvic congestion.",
+  uterus: {
+    badge: "WOMEN'S HEALTH & FERTILITY",
+    title: "Uterine & Female Pelvic Care",
+    desc: "Breakthrough non-surgical pinhole treatments for heavy menstrual bleeding, painful uterine fibroids, adenomyosis, and chronic pelvic pain that preserve the uterus completely.",
     treatments: [
       "Uterine Fibroid Embolization (UFE / UAE)",
-      "Prostate Artery Embolization (PAE for BPH)",
-      "Varicocele Embolization (Fertility & Pain)",
+      "Adenomyosis Embolization",
       "Pelvic Congestion Syndrome Embolization",
-      "Uterine Artery Embolization for Adenomyosis"
+      "Postpartum Hemorrhage Embolization",
+      "Fallopian Tube Recanalization for Infertility"
     ],
-    highlight: "UFE preserves the uterus and provides permanent relief from fibroids without surgery, while PAE relieves urinary obstruction without sexual side effects."
+    highlight: "100% Organ Preserved — permanently shrinks fibroids and stops heavy bleeding without removing the uterus (no hysterectomy).",
+    ctaProcedure: "Uterine Fibroids (UFE)"
+  },
+  pelvis: {
+    badge: "MEN'S HEALTH & UROLOGY",
+    title: "Prostate & Male Pelvic Interventions",
+    desc: "Non-surgical catheter treatments for urinary obstruction due to benign prostatic hyperplasia (BPH) and scrotum vein swelling (varicocele) causing pain or subfertility.",
+    treatments: [
+      "Prostate Artery Embolization (PAE for BPH)",
+      "Varicocele Embolization (Scrotal Veins)",
+      "Intractable Hematuria Embolization",
+      "Pelvic Trauma & Bladder Bleed Hemostasis",
+      "Pinhole Suprapubic Cystostomy"
+    ],
+    highlight: "PAE shrinks the enlarged prostate through a 2mm pinhole with zero urethral cutting, zero incontinence, and zero sexual side effects.",
+    ctaProcedure: "Enlarged Prostate (PAE)"
   },
   limbs: {
-    title: "Vascular, Limbs & Joint Interventions",
-    desc: "State-of-the-art endovascular solutions for varicose veins, deep vein clots, diabetic foot blockages, and chronic knee pain.",
+    badge: "VASCULAR & ORTHOPEDIC",
+    title: "Vascular, Legs & Knee Interventions",
+    desc: "Cutting-edge endovascular laser, medical glue, and embolization for twisting leg veins, deep vein thrombosis, and chronic osteoarthritis knee joint pain.",
     treatments: [
       "Varicose Veins EVLA (Endovenous Laser)",
       "VenaSeal Medical Glue & Radiofrequency Ablation",
-      "Genicular Artery Embolization (GAE) for Knee Arthritis",
-      "DVT Thrombolysis & IVC Filter Placement",
-      "Diabetic Foot & Peripheral Angioplasty",
-      "AV Fistula Angioplasty for Dialysis Patients"
+      "Genicular Artery Embolization (GAE for Knee Pain)",
+      "DVT Catheter Thrombolysis & IVC Filter Placement",
+      "Diabetic Foot & Peripheral Angioplasty"
     ],
-    highlight: "Varicose vein procedures take under 45 minutes under local anesthesia with zero cuts or stitches. Walk home the very same day!"
+    highlight: "Walk home 45 minutes after varicose vein or knee embolization. 100% walk-in walk-out daycare with zero stitches or hospital stay.",
+    ctaProcedure: "Varicose Veins (EVLA / Glue)"
+  },
+  hand: {
+    badge: "DIALYSIS & ARTERIAL ACCESS",
+    title: "Vascular Access & Dialysis Fistula Care",
+    desc: "Minimally invasive salvage and maintenance of dialysis fistulas and trans-radial endovascular access for dialysis patients and vascular disease.",
+    treatments: [
+      "AV Fistula Balloon Angioplasty (Fistuloplasty)",
+      "Central Vein Stenosis & Thoracic Stenting",
+      "Permacath Tunneled Dialysis Catheter Placement",
+      "AV Fistula Declotting & Catheter Thrombectomy",
+      "Trans-Radial Micro-Access for Interventions"
+    ],
+    highlight: "Restores healthy dialysis fistula flow within 30 minutes, extending fistula lifespan and preventing emergency dialysis disruptions.",
+    ctaProcedure: "Dialysis Permacath / Fistula"
+  },
+  spine: {
+    badge: "SPINE & MUSCULOSKELETAL",
+    title: "Spine, Hip & Musculoskeletal Pain",
+    desc: "Pinhole cement stabilization and nerve/artery embolization for painful osteoporotic vertebral compression fractures, severe hip arthritis, and intractable bone pain.",
+    treatments: [
+      "Percutaneous Vertebroplasty (Bone Cement Injection)",
+      "Hip Joint Genicular Embolization for Severe Pain",
+      "Sacroiliac Joint Pain Embolization",
+      "CT-Guided Spine & Pelvic Bone Biopsy",
+      "Facet Joint & Spinal Nerve Root Blocks"
+    ],
+    highlight: "Immediate pain relief within 2 to 4 hours after vertebroplasty, allowing fracture patients to sit, stand, and walk upright without agony.",
+    ctaProcedure: "Other"
   }
 };
 
+function setBodyGender(gender) {
+  currentBodyGender = gender;
+  const btnF = document.getElementById('btnGenderFemale');
+  const btnM = document.getElementById('btnGenderMale');
+  if (btnF) btnF.classList.toggle('active', gender === 'female');
+  if (btnM) btnM.classList.toggle('active', gender === 'male');
+
+  const pillPelvis = document.getElementById('bodyPillPelvis');
+  if (pillPelvis) {
+    if (gender === 'female') {
+      pillPelvis.innerHTML = '05. Uterus & Pelvis <span>→</span>';
+      pillPelvis.setAttribute('data-zone', 'uterus');
+      if (currentBodyZone === 'pelvis') currentBodyZone = 'uterus';
+    } else {
+      pillPelvis.innerHTML = '05. Prostate & Pelvis <span>→</span>';
+      pillPelvis.setAttribute('data-zone', 'pelvis');
+      if (currentBodyZone === 'uterus') currentBodyZone = 'pelvis';
+    }
+  }
+
+  updateBodyFigure();
+  selectBodyZone(currentBodyZone);
+}
+
+function setBodyView(view) {
+  currentBodyView = view;
+  const btnF = document.getElementById('btnViewFront');
+  const btnB = document.getElementById('btnViewBack');
+  if (btnF) btnF.classList.toggle('active', view === 'front');
+  if (btnB) btnB.classList.toggle('active', view === 'back');
+
+  if (view === 'back' && (currentBodyZone === 'abdomen' || currentBodyZone === 'uterus' || currentBodyZone === 'pelvis')) {
+    currentBodyZone = 'spine';
+  } else if (view === 'front' && currentBodyZone === 'spine') {
+    currentBodyZone = currentBodyGender === 'female' ? 'uterus' : 'pelvis';
+  }
+
+  updateBodyFigure();
+  selectBodyZone(currentBodyZone);
+}
+
+function updateBodyFigure() {
+  const img = document.getElementById('anatomyFigureImg');
+  const layer = document.getElementById('anatomyHotspots');
+  if (!img || !layer) return;
+
+  let configKey = 'female_front';
+  if (currentBodyView === 'back') {
+    configKey = 'back';
+    img.src = 'images/body/back-body.jpg';
+  } else if (currentBodyGender === 'male') {
+    configKey = 'male_front';
+    img.src = 'images/body/male-body.jpg';
+  } else {
+    configKey = 'female_front';
+    img.src = 'images/body/female-body.jpg';
+  }
+
+  const items = hotspotsConfig[configKey] || hotspotsConfig.female_front;
+  layer.innerHTML = items.map(item => {
+    const isActive = (item.zone === currentBodyZone) ? ' active' : '';
+    return `
+      <div class="anatomy-hotspot-hitarea${isActive}" 
+           data-zone="${item.zone}" 
+           title="Click to view ${item.title} pinhole treatments"
+           onclick="selectBodyZone('${item.zone}')" 
+           style="top: ${item.top}; left: ${item.left}; width: ${item.width}; height: ${item.height};">
+        <span class="hotspot-pill-label">${item.label || ''}</span>
+      </div>
+    `;
+  }).join('');
+}
+
 function selectBodyZone(zoneKey) {
-  // Update pills
+  currentBodyZone = zoneKey;
+
+  // Update pills on right side
   document.querySelectorAll('.body-pill').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-zone') === zoneKey);
+    const bz = btn.getAttribute('data-zone');
+    btn.classList.toggle('active', bz === zoneKey);
   });
 
-  // Update SVG zones
-  document.querySelectorAll('.body-zone-btn').forEach(g => {
-    g.classList.toggle('active', g.getAttribute('data-zone') === zoneKey);
+  // Update hotspot hitareas on body figure
+  document.querySelectorAll('.anatomy-hotspot-hitarea').forEach(spot => {
+    const sz = spot.getAttribute('data-zone');
+    spot.classList.toggle('active', sz === zoneKey);
   });
 
   // Update detail card
-  const data = bodyData[zoneKey];
-  if (!data) return;
-
+  const data = bodyData[zoneKey] || bodyData.head;
+  const badgeEl = document.getElementById('bodyZoneBadge');
   const titleEl = document.getElementById('bodyZoneTitle');
   const descEl = document.getElementById('bodyZoneDesc');
   const listEl = document.getElementById('bodyZoneTreatments');
   const highlightEl = document.getElementById('bodyZoneHighlight');
+  const ctaBtn = document.getElementById('bodyZoneCta');
 
+  if (badgeEl) badgeEl.textContent = data.badge;
   if (titleEl) titleEl.textContent = data.title;
   if (descEl) descEl.textContent = data.desc;
   if (highlightEl) highlightEl.textContent = data.highlight;
 
   if (listEl) {
     listEl.innerHTML = data.treatments.map(t => `<span class="condition-tag">${t}</span>`).join('');
+  }
+
+  if (ctaBtn) {
+    ctaBtn.setAttribute('onclick', `openBooking('${data.ctaProcedure || data.treatments[0]}')`);
   }
 }
 
@@ -331,6 +512,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 10. Initialize 2-Second Hero Slider (IR Clinic India Architecture)
   initHeroSlider();
+
+  // 11. Initialize Interactive Anatomical Body Explorer
+  if (document.getElementById('anatomyFigureImg')) {
+    updateBodyFigure();
+    selectBodyZone('head');
+  }
 });
 
 // ==========================================================================
